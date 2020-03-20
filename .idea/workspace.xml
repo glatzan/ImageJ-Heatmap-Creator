@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZOmrKU6aGIODMPQ0V7KBwznhQC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SifiDraw" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="eu.glatz.imagej" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andreas\IdeaProjects\ImageJPlugins\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LineDetectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LineDetectorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LineDetectorTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="" />
+      <created>1584718711822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584718711822</updated>
+      <workItem from="1584718715850" duration="8171000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1617" y="496" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584726284406">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1617" y="496" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726284406" />
+    <state x="1892" y="628" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584718903465">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1892" y="628" key="#com.intellij.ide.util.TreeClassChooserDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718903465" />
+    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1584720018969">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584720018969" />
+    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1584718799559">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1943" y="596" key="FileChooserDialogImpl/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718799559" />
+    <state width="3797" height="398" key="GridCell.Tab.0.bottom" timestamp="1584732097615">
+      <screen x="-2560" y="179" width="2560" height="1400" />
+    </state>
+    <state width="3797" height="398" key="GridCell.Tab.0.bottom/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="398" key="GridCell.Tab.0.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
+    <state width="3797" height="398" key="GridCell.Tab.0.center" timestamp="1584732097615">
+      <screen x="-2560" y="179" width="2560" height="1400" />
+    </state>
+    <state width="3797" height="398" key="GridCell.Tab.0.center/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="398" key="GridCell.Tab.0.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
+    <state width="3797" height="398" key="GridCell.Tab.0.left" timestamp="1584732097615">
+      <screen x="-2560" y="179" width="2560" height="1400" />
+    </state>
+    <state width="3797" height="398" key="GridCell.Tab.0.left/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="398" key="GridCell.Tab.0.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
+    <state width="3797" height="398" key="GridCell.Tab.0.right" timestamp="1584732097615">
+      <screen x="-2560" y="179" width="2560" height="1400" />
+    </state>
+    <state width="3797" height="398" key="GridCell.Tab.0.right/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="398" key="GridCell.Tab.0.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
+    <state x="1643" y="415" key="SettingsEditor" timestamp="1584718997815">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1643" y="415" key="SettingsEditor/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718997815" />
+    <state x="1545" y="546" key="new project wizard" timestamp="1584719040729">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1545" y="546" key="new project wizard/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584719040729" />
+  </component>
+</project>
