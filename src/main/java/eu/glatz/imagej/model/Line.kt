@@ -1,31 +1,15 @@
 package eu.glatz.imagej.model
 
-class Line {
-    var id: Int = 0
-    var points = mutableListOf<Point>()
-    var length: Double = 0.0
+interface Line {
+    var id: Int
+    var length: Double
+    fun addPoint(vararg point: Point): Line
+    fun updateLength()
+    fun firstPoint(): Point
+    fun lastPoint(): Point
+    fun getAllPoints(): List<Point>
 
-    constructor()
-    constructor(id: Int) {
-        this.id = id
+    fun calculateIntersection(line: Line){
+//        val equation = "(((${x})+(${direction.x})*t)*(${direction.x}))+(((${y})+(${direction.y})*t)*(${direction.y}))"
     }
-
-    fun addPoint(point: Point) {
-        this.points.add(point)
-    }
-
-    fun updateLength() {
-        this.length = calcLength(points)
-    }
-
-    companion object {
-        fun calcLength(points: MutableList<Point>): Double {
-            var length = 0.0
-            for (i in 10 until points.size) {
-                length += points[i - 1].distance(points[i])
-            }
-            return length
-        }
-    }
-
 }
