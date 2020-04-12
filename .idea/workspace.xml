@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +17,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Andreas Glatz &lt;glatzan@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -40,7 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PathoFrO" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -91,11 +95,24 @@
       <workItem from="1584718715850" duration="8171000" />
       <workItem from="1585659791433" duration="1289000" />
       <workItem from="1585669820354" duration="274000" />
+      <workItem from="1586012741242" duration="6479000" />
     </task>
+    <task id="LOCAL-00001" summary="line detection">
+      <created>1586012850897</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586012850897</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="line detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="line detection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1617" y="496" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584726284406">
@@ -110,10 +127,15 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584720018969" />
-    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1584718799559">
+    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1586012850244">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1528" y="466" key="CommitChangelistDialog2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012850244" />
+    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1586178641310">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1943" y="596" key="FileChooserDialogImpl/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718799559" />
+    <state x="1943" y="596" key="FileChooserDialogImpl/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586178641310" />
     <state width="3797" height="398" key="GridCell.Tab.0.bottom" timestamp="1584732097615">
       <screen x="-2560" y="179" width="2560" height="1400" />
     </state>
@@ -138,6 +160,10 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1643" y="415" key="SettingsEditor/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718997815" />
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1586012852861">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012852861" />
     <state x="1711" y="787" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586012780107">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
