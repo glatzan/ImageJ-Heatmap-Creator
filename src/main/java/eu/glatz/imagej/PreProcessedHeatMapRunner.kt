@@ -26,7 +26,7 @@ class PreProcessedHeatMapRunner : PlugIn {
             }
 
             val heatMap = heatMapProcessor.loadSimpleHeatMap(imageFolder)
-            val heatMapImage = heatMapProcessor.createHeatMap(heatMap)
+            val heatMapImage = heatMapProcessor.drawInterpolatedHeatMap(heatMap)
 
             val blur = GaussianBlur()
             blur.blurGaussian(heatMapImage.processor,2.0)

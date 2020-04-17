@@ -54,7 +54,7 @@ class HeatMapProcessor {
         return result
     }
 
-    fun loadProbabilityMap(folder: File, weights: FloatArray = floatArrayOf(0.05F, 0.1F, 0.2F, 0.2F, 0.5F, 0.2F, 0.2F, 0.1F, 0.05F)): ProbabilityMap {
+    fun loadProbabilityMap(folder: File, weights: FloatArray = floatArrayOf(0.1F, 0.1F, 0.2F, 0.3F, 0.5F, 0.3F, 0.2F, 0.1F, 0.1F)): ProbabilityMap {
         val imageStack = loadStack(folder)
         val imageCount = imageStack.imageStackSize
 
@@ -64,7 +64,7 @@ class HeatMapProcessor {
         val maxWidth = imageStack.imageStack.getProcessor(1).width
         val maxHeight = imageStack.imageStack.getProcessor(1).height
 
-        val probabilityMap = ProbabilityMap(maxWidth, maxHeight, imageCount)
+        val probabilityMap = ProbabilityMap(imageCount, maxWidth, maxHeight)
 
         val weightsOffset = floor(weights.size / 2F).toInt()
 
@@ -79,7 +79,7 @@ class HeatMapProcessor {
                     for (n in -weightsOffset..weightsOffset) {
                         when {
                             i + n >= imageCount -> probabilityMap.data[(i + n) - imageCount][maxWidth - 1 - x][y] += if (currentImageProcessor.get(x, y) > 0) 1 * weights[n + weightsOffset] else 0F
-                            i + n < 0 -> probabilityMap.data[imageCount + (i + n)][maxWidth - 1 - x][y] += if (currentImageProcessor.get(x, y) > 0) 1 * weights[n + weightsOffset] else 0F
+                            i + n < 0 -> probabilityMap.data[imageCount + (i + n)][maxWidth - 1 - x][y] += if (currentImageProcessor.get(x, y) > 0) weights[n + weightsOffset] else 0F
                             else -> probabilityMap.data[(i + n)][x][y] += if (currentImageProcessor.get(x, y) > 0) 1 * weights[n + weightsOffset] else 0F
                         }
                     }
@@ -89,7 +89,7 @@ class HeatMapProcessor {
         return probabilityMap
     }
 
-    fun convertProbabilityMapToHeatMap(probabilityMap: ProbabilityMap, totalDegreeSpan: Double = 180.0): HeatMap {
+    fun convertProbabilityMapToHeatMap(probabilityMap: ProbabilityMap, totalDegreeSpan: Double = 180.0, threshold: Float = 1.0F): HeatMap {
         val imageCount = probabilityMap.count
 
         val slideDegree = totalDegreeSpan / imageCount
@@ -103,7 +103,7 @@ class HeatMapProcessor {
             var columnValue = 0
             for (x in 0 until probabilityMap.width) {
                 for (y in 0 until probabilityMap.height) {
-                    if (current[x][y] > 0)
+                    if (current[x][y] >= threshold)
                         columnValue++;
                 }
 
@@ -119,7 +119,7 @@ class HeatMapProcessor {
         return result
     }
 
-    fun probabilityMapImageStack(probabilityMap: ProbabilityMap): ImageStack {
+    fun convertProbabilityMapImageStack(probabilityMap: ProbabilityMap): ImageStack {
         val probabilityStack = ImageStack(probabilityMap.width, probabilityMap.height)
 
         for (i in 0 until probabilityMap.count) {
@@ -127,15 +127,13 @@ class HeatMapProcessor {
 
             for (x in 0 until probabilityMap.width) {
 
-                var found = 0
                 for (y in 0 until probabilityMap.height) {
-                    val prob = probabilityMap.data[i - 1][x][y]
+                    val prob = probabilityMap.data[i][x][y]
                     if (prob > 0) {
                         if (prob >= 10)
                             processor.setColor(Color(255, 255, 255))
                         else if (prob >= 1) {
                             processor.setColor(Color(255, 255, 0))
-                            found++
                         } else
                             processor.setColor(Color((1 - prob), prob, 0F))
                     } else {
@@ -167,7 +165,7 @@ class HeatMapProcessor {
         results.save(target.path)
     }
 
-    fun createHeatMap(heatMap: HeatMap, interpolationKernel: Int = 3): ImagePlus {
+    fun drawInterpolatedHeatMap(heatMap: HeatMap, interpolationKernel: Int = 3): ImagePlus {
         val kernelOffset = Math.floor(((interpolationKernel.toDouble() / 2))).toInt()
         val image = IJ.createImage("Heatmap", "RGB", heatMap.width, heatMap.height, 1)
         val pB = image.processor as ColorProcessor

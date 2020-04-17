@@ -41,7 +41,7 @@ class Parabola {
 
     fun calculatePointOfNormalOnParabola(externalPoint: Point): Point {
         val util = ExprEvaluator(false, 5)
-        val equation = "(-500/(x-${startPoint.x}))*(${externalPoint.x}-x)+(0.001*(x-${startPoint.x})^2+${startPoint.y}) == ${externalPoint.y}"
+        val equation = "(-500/(x-${startPoint.x}))*(${externalPoint.x}-x)+($factor*(x-${startPoint.x})^2+${startPoint.y}) == ${externalPoint.y}"
         val solveEquation = util.eval("Solve(${equation},x)")
         val x = solveEquation.first().first().second().toString().toDouble();
         val y = calcY(x.toInt())
