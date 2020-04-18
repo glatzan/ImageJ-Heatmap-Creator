@@ -34,6 +34,8 @@ class HeatMapRunner : PlugIn {
 
             val heatMap = processor.convertProbabilityMapToHeatMap(probabilityMap)
 
+            processor.writeProbabilityToFolder(probabilityMap, File("D:\\Projekte\\export\\vali\\21660_big_150_post"))
+
             val heatMapImage = processor.drawInterpolatedHeatMap(heatMap)
             heatMapImage.show()
         }

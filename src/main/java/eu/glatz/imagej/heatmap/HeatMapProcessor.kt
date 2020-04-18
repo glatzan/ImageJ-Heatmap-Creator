@@ -3,8 +3,10 @@ package eu.glatz.imagej.heatmap
 import ij.IJ
 import ij.ImagePlus
 import ij.ImageStack
+import ij.io.FileSaver
 import ij.measure.ResultsTable
 import ij.plugin.FolderOpener
+import ij.process.ByteProcessor
 import ij.process.ColorProcessor
 import java.awt.Color
 import java.awt.Point
@@ -146,6 +148,34 @@ class HeatMapProcessor {
         }
 
         return probabilityStack
+    }
+
+    fun writeProbabilityToFolder(probabilityMap: ProbabilityMap, folder: File, binary: Boolean = true) {
+        var probabilityStack = ImageStack(probabilityMap.width, probabilityMap.height)
+
+        if (binary) {
+            for (i in 0 until probabilityMap.count) {
+                val processor = ByteProcessor(probabilityMap.width, probabilityMap.height)
+                processor.setColor(Color(255, 255, 255))
+                for (x in 0 until probabilityMap.width) {
+                    for (y in 0 until probabilityMap.height) {
+                        val prob = probabilityMap.data[i][x][y]
+                        if (prob >= 1)
+                            processor.drawPixel(x, y)
+
+                    }
+                }
+                probabilityStack.addSlice(processor)
+            }
+        } else {
+            probabilityStack = convertProbabilityMapImageStack(probabilityMap)
+        }
+
+        for (i in 0 until probabilityStack.size) {
+            val pro = probabilityStack.getProcessor(i + 1)
+            FileSaver(ImagePlus("", pro)).saveAsPng(File(folder, "$i.png").absolutePath)
+        }
+
     }
 
     fun saveScatteredHeatMapToCVS(heatMap: Array<IntArray>, target: File) {

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="">
+    <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="interpolation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/DetectedAreaComparer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DetectAreaTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/HeatMapRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/HeatMapRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/HeatMapProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/HeatMapProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProbabilityMapTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProbabilityMapTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="JupyterTrust" id="9fa81e08-6201-4c92-869f-601f6a21c957" />
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -44,7 +50,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PathoFrO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,7 +58,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="eu.glatz.imagej.heatmap" />
       <recent name="" />
+      <recent name="eu.glatz.imagej" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="eu.glatz.imagej" />
@@ -61,12 +69,53 @@
       <recent name="C:\Users\Andreas\IdeaProjects\ImageJPlugins\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="LineDetectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProbabilityMapTest.test">
+    <configuration name="DetectAreaTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ImageJPlugins" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LineDetectorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DetectAreaTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParabolaFillerTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ParabolaFillerTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PreProcessedProbabilityMapTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PreProcessedProbabilityMapTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProbabilityMapTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ProbabilityMapTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessGraftTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ProcessGraftTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LineDetectorTest" />
+        <item itemvalue="JUnit.ProbabilityMapTest.test" />
+        <item itemvalue="JUnit.DetectAreaTest.test" />
+        <item itemvalue="JUnit.ParabolaFillerTest.test3" />
+        <item itemvalue="JUnit.PreProcessedProbabilityMapTest.test" />
+        <item itemvalue="JUnit.ProcessGraftTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -96,6 +149,10 @@
       <workItem from="1585659791433" duration="1289000" />
       <workItem from="1585669820354" duration="274000" />
       <workItem from="1586012741242" duration="6479000" />
+      <workItem from="1586792613427" duration="10556000" />
+      <workItem from="1586864403766" duration="85000" />
+      <workItem from="1586864543286" duration="58612000" />
+      <workItem from="1587214109842" duration="9791000" />
     </task>
     <task id="LOCAL-00001" summary="line detection">
       <created>1586012850897</created>
@@ -104,7 +161,28 @@
       <option name="project" value="LOCAL" />
       <updated>1586012850897</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="interpolation">
+      <created>1586864471563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586864471563</updated>
+    </task>
+    <task id="LOCAL-00003" summary="heatmap">
+      <created>1586962680253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586962680253</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ray">
+      <created>1587101040580</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587101040580</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,9 +190,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="line detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="line detection" />
+    <MESSAGE value="interpolation" />
+    <MESSAGE value="heatmap" />
+    <MESSAGE value="ray" />
+    <option name="LAST_COMMIT_MESSAGE" value="ray" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1512" y="441" key="#Auto_Import" timestamp="1587032890799">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1512" y="441" key="#Auto_Import/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587032890799" />
     <state x="1617" y="496" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584726284406">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
@@ -123,55 +208,116 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1892" y="628" key="#com.intellij.ide.util.TreeClassChooserDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718903465" />
-    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1584720018969">
+    <state x="1545" y="174" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587036498739">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1545" y="174" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587036498739" />
+    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1587033131244">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584720018969" />
-    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1586012850244">
+    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587033131244" />
+    <state x="1675" y="489" key="#xdebugger.evaluate" timestamp="1586870818337">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state x="1675" y="489" key="#xdebugger.evaluate/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586870818337" />
+    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1587101040079">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1528" y="466" key="CommitChangelistDialog2/0.0.3840.1560@0.0.3840.1560" timestamp="1587101040079" />
     <state x="1528" y="466" key="CommitChangelistDialog2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012850244" />
-    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1586178641310">
+    <state x="1528" y="466" key="CommitChangelistDialog2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586962679413" />
+    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1587134596430">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1943" y="596" key="FileChooserDialogImpl/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718799559" />
-    <state x="1943" y="596" key="FileChooserDialogImpl/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586178641310" />
-    <state width="3797" height="398" key="GridCell.Tab.0.bottom" timestamp="1584732097615">
-      <screen x="-2560" y="179" width="2560" height="1400" />
+    <state x="1943" y="596" key="FileChooserDialogImpl/0.0.3840.1560@0.0.3840.1560" timestamp="1587134596430" />
+    <state x="1943" y="596" key="FileChooserDialogImpl/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587035746165" />
+    <state width="3797" height="450" key="GridCell.Tab.0.bottom" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state width="3797" height="398" key="GridCell.Tab.0.bottom/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="450" key="GridCell.Tab.0.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1586940948850" />
     <state width="3797" height="398" key="GridCell.Tab.0.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
-    <state width="3797" height="398" key="GridCell.Tab.0.center" timestamp="1584732097615">
-      <screen x="-2560" y="179" width="2560" height="1400" />
+    <state width="3797" height="450" key="GridCell.Tab.0.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.0.center" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state width="3797" height="398" key="GridCell.Tab.0.center/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="450" key="GridCell.Tab.0.center/0.0.3840.1560@0.0.3840.1560" timestamp="1586940948849" />
     <state width="3797" height="398" key="GridCell.Tab.0.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
-    <state width="3797" height="398" key="GridCell.Tab.0.left" timestamp="1584732097615">
-      <screen x="-2560" y="179" width="2560" height="1400" />
+    <state width="3797" height="450" key="GridCell.Tab.0.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.0.left" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state width="3797" height="398" key="GridCell.Tab.0.left/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="450" key="GridCell.Tab.0.left/0.0.3840.1560@0.0.3840.1560" timestamp="1586940948849" />
     <state width="3797" height="398" key="GridCell.Tab.0.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
-    <state width="3797" height="398" key="GridCell.Tab.0.right" timestamp="1584732097615">
-      <screen x="-2560" y="179" width="2560" height="1400" />
+    <state width="3797" height="450" key="GridCell.Tab.0.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.0.right" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state width="3797" height="398" key="GridCell.Tab.0.right/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584726339950" />
+    <state width="3797" height="450" key="GridCell.Tab.0.right/0.0.3840.1560@0.0.3840.1560" timestamp="1586940948850" />
     <state width="3797" height="398" key="GridCell.Tab.0.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@-2560.179.2560.1400" timestamp="1584732097615" />
+    <state width="3797" height="450" key="GridCell.Tab.0.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.1.bottom" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="3797" height="450" key="GridCell.Tab.1.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1586940938659" />
+    <state width="3797" height="450" key="GridCell.Tab.1.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.1.center" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="3797" height="450" key="GridCell.Tab.1.center/0.0.3840.1560@0.0.3840.1560" timestamp="1586940938659" />
+    <state width="3797" height="450" key="GridCell.Tab.1.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.1.left" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="3797" height="450" key="GridCell.Tab.1.left/0.0.3840.1560@0.0.3840.1560" timestamp="1586940938659" />
+    <state width="3797" height="450" key="GridCell.Tab.1.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
+    <state width="3797" height="450" key="GridCell.Tab.1.right" timestamp="1587223004071">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="3797" height="450" key="GridCell.Tab.1.right/0.0.3840.1560@0.0.3840.1560" timestamp="1586940938659" />
+    <state width="3797" height="450" key="GridCell.Tab.1.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587223004071" />
     <state x="1643" y="415" key="SettingsEditor" timestamp="1584718997815">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1643" y="415" key="SettingsEditor/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718997815" />
-    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1586012852861">
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1587101042862">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/0.0.3840.1560@0.0.3840.1560" timestamp="1587101042862" />
     <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012852861" />
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586962682349" />
+    <state x="3257" y="677" key="com.intellij.ide.util.TipDialog" timestamp="1586864548110">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="3257" y="677" key="com.intellij.ide.util.TipDialog/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586864548110" />
     <state x="1711" y="787" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586012780107">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1711" y="787" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012780107" />
+    <state x="1627" y="536" width="586" height="488" key="find.popup" timestamp="1587220863527">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1627" y="536" width="586" height="488" key="find.popup/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587220863527" />
     <state x="1545" y="546" key="new project wizard" timestamp="1585660111434">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1545" y="546" key="new project wizard/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584719040729" />
     <state x="1545" y="546" key="new project wizard/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1585660111434" />
+    <state x="1661" y="428" key="refactoring.ChangeSignatureDialog" timestamp="1587215885509">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1661" y="428" key="refactoring.ChangeSignatureDialog/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587215885509" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="t" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
