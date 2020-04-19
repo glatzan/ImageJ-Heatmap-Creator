@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="interpolation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/DetectedAreaComparer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DetectAreaTest.kt" afterDir="false" />
+    <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/HeatMapRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/HeatMapRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/HeatMapProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/HeatMapProcessor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProbabilityMapTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProbabilityMapTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +147,7 @@
       <workItem from="1586792613427" duration="10556000" />
       <workItem from="1586864403766" duration="85000" />
       <workItem from="1586864543286" duration="58612000" />
-      <workItem from="1587214109842" duration="9791000" />
+      <workItem from="1587214109842" duration="10535000" />
     </task>
     <task id="LOCAL-00001" summary="line detection">
       <created>1586012850897</created>
@@ -182,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587101040580</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="area comparision">
+      <created>1587242737902</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587242737902</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +195,8 @@
     <MESSAGE value="interpolation" />
     <MESSAGE value="heatmap" />
     <MESSAGE value="ray" />
-    <option name="LAST_COMMIT_MESSAGE" value="ray" />
+    <MESSAGE value="area comparision" />
+    <option name="LAST_COMMIT_MESSAGE" value="area comparision" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1512" y="441" key="#Auto_Import" timestamp="1587032890799">
@@ -221,12 +224,12 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1675" y="489" key="#xdebugger.evaluate/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586870818337" />
-    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1587101040079">
+    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1587242737438">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1528" y="466" key="CommitChangelistDialog2/0.0.3840.1560@0.0.3840.1560" timestamp="1587101040079" />
     <state x="1528" y="466" key="CommitChangelistDialog2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012850244" />
-    <state x="1528" y="466" key="CommitChangelistDialog2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586962679413" />
+    <state x="1528" y="466" key="CommitChangelistDialog2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587242737438" />
     <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1587134596430">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
@@ -285,12 +288,12 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1643" y="415" key="SettingsEditor/-2560.179.2560.1400/0.0.3840.1560/3840.180.2560.1400@0.0.3840.1560" timestamp="1584718997815" />
-    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1587101042862">
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1587242743801">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="1492" y="604" key="Vcs.Push.Dialog.v2/0.0.3840.1560@0.0.3840.1560" timestamp="1587101042862" />
     <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.0.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586012852861" />
-    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1586962682349" />
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1587242743801" />
     <state x="3257" y="677" key="com.intellij.ide.util.TipDialog" timestamp="1586864548110">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
