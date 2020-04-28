@@ -1,4 +1,4 @@
-package eu.glatz.imagej
+package eu.glatz.imagej.legacy
 
 import eu.glatz.imagej.model.Parabola
 import eu.glatz.imagej.model.Point
@@ -99,7 +99,7 @@ class HostParabola : PlugInFilter {
             ImagePlus("HostParabola_Grey", acceptedLinesProcessor).show()
             ImagePlus("HostParabola_EdgeDetection", edgeDetectionProcessor).show()
         }
-        HostParabola.hostParabola = parabola
+        hostParabola = parabola
     }
 
     fun findTopPoint(points: List<Point>, out: ImageProcessor): Point {

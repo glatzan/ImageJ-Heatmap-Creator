@@ -1,4 +1,4 @@
-import eu.glatz.imagej.ParabolaDetector
+import eu.glatz.imagej.legacy.ParabolaDetector
 import eu.glatz.imagej.ParabolaDrawer
 import eu.glatz.imagej.ParabolaFillerRayCreator
 import ij.IJ

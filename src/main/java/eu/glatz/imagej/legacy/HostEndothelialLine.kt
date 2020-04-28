@@ -1,4 +1,4 @@
-package eu.glatz.imagej
+package eu.glatz.imagej.legacy
 
 import eu.glatz.imagej.model.*
 import eu.glatz.imagej.util.DrawUtil

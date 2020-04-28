@@ -1,4 +1,4 @@
-package eu.glatz.imagej
+package eu.glatz.imagej.legacy
 
 import com.google.gson.Gson
 import eu.glatz.imagej.model.SimpleLine

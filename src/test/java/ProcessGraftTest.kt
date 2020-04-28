@@ -1,6 +1,4 @@
-import eu.glatz.imagej.CalculateDetachmentVolume
-import eu.glatz.imagej.ProcessGraft
-import eu.glatz.imagej.util.DrawUtil
+import eu.glatz.imagej.legacy.ProcessGraft
 import ij.IJ
 import ij.ImageJ
 import ij.io.Opener

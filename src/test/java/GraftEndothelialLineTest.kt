@@ -1,5 +1,5 @@
-import eu.glatz.imagej.GraftEndothelialLine
-import eu.glatz.imagej.HostParabola
+import eu.glatz.imagej.legacy.GraftEndothelialLine
+import eu.glatz.imagej.legacy.HostParabola
 import ij.IJ
 import ij.ImageJ
 import ij.io.Opener

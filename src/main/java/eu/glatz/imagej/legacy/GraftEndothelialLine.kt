@@ -1,4 +1,4 @@
-package eu.glatz.imagej
+package eu.glatz.imagej.legacy
 
 import eu.glatz.imagej.model.*
 import eu.glatz.imagej.util.DrawUtil
@@ -68,7 +68,7 @@ class GraftEndothelialLine : PlugInFilter {
         }
 
         // calculating overlapping steps to parabola
-        val lineClassification = linesInValidArea.map { LineClassification(it, GraftEndothelialLine.hostParabola) }.toMutableList()
+        val lineClassification = linesInValidArea.map { LineClassification(it, hostParabola) }.toMutableList()
         lineClassification.forEach { it.calculateStepsToParabola(lineClassification) }
 
         val resultLines = listOf<Line>()

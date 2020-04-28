@@ -1,4 +1,4 @@
-import eu.glatz.imagej.LineDetector
+import eu.glatz.imagej.legacy.LineDetector
 import ij.IJ
 import ij.ImageJ
 import ij.io.Opener
