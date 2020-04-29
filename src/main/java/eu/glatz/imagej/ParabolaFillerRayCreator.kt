@@ -1,7 +1,7 @@
 package eu.glatz.imagej
 
 import com.google.gson.Gson
-import eu.glatz.imagej.model.Parabola
+import eu.glatz.imagej.heatmap.mask.Parabola
 import eu.glatz.imagej.model.Point
 import eu.glatz.imagej.model.ray.Ray
 import eu.glatz.imagej.model.ray.RayContainer

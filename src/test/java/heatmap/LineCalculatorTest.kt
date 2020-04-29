@@ -1,6 +1,6 @@
 package heatmap
 
-import eu.glatz.imagej.heatmap.LineCalculator
+import eu.glatz.imagej.heatmap.mask.LineCalculator
 import ij.IJ
 import ij.ImageJ
 import org.junit.jupiter.api.Test
@@ -32,7 +32,7 @@ class LineCalculatorTest {
 
         resultImage.show()
 
-        val line = LineCalculator(p1,p2)
+        val line = LineCalculator(p1, p2)
         val points = line.getIntersectionPixels()
 
         resultProcessor.setColor(Color.RED)
@@ -62,7 +62,7 @@ class LineCalculatorTest {
         resultProcessor.setColor(Color.BLUE)
         resultProcessor.drawPixel(p22.x,p22.y)
 
-        val line2 = LineCalculator(p11,p22)
+        val line2 = LineCalculator(p11, p22)
         val points2 = line2.getIntersectionPixels()
 
         for(p in points2){
@@ -78,7 +78,7 @@ class LineCalculatorTest {
             Thread.sleep(10)
         }
 
-        val lineY = LineCalculator(p1y,p2y)
+        val lineY = LineCalculator(p1y, p2y)
         val pointsY = lineY.getIntersectionPixels()
 
         for(p in pointsY){
@@ -95,7 +95,7 @@ class LineCalculatorTest {
         }
 
 
-        val lineY2 = LineCalculator(p1y2,p2y2)
+        val lineY2 = LineCalculator(p1y2, p2y2)
         val pointsY2 = lineY2.getIntersectionPixels()
 
         for(p in pointsY2){

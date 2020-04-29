@@ -1,5 +1,6 @@
 package eu.glatz.imagej.legacy
 
+import eu.glatz.imagej.heatmap.mask.Parabola
 import eu.glatz.imagej.model.*
 import eu.glatz.imagej.util.DrawUtil
 import eu.glatz.imagej.util.LineFinder

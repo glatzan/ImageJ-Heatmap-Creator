@@ -1,5 +1,6 @@
-package eu.glatz.imagej.model
+package eu.glatz.imagej.heatmap.mask
 
+import eu.glatz.imagej.model.Point
 import eu.glatz.imagej.util.VectorUtils
 import ij.process.ImageProcessor
 import org.matheclipse.core.eval.ExprEvaluator
@@ -7,6 +8,9 @@ import java.awt.Color
 import kotlin.math.pow
 import kotlin.math.sqrt
 
+/**
+ * Parabola
+ */
 class Parabola {
 
     var startPoint: Point = Point()
