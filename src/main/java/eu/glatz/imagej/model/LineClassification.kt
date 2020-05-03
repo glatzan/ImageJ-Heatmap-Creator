@@ -1,6 +1,6 @@
 package eu.glatz.imagej.model
 
-import eu.glatz.imagej.heatmap.mask.Parabola
+import eu.glatz.imagej.heatmap.ray.Parabola
 import eu.glatz.imagej.util.VectorUtils
 
 /**
@@ -17,8 +17,8 @@ class LineClassification {
 
     constructor(line: Line, parabola: Parabola) {
         this.line = line
-        this.firstParabolaNormalPoint = parabola.calculatePointOfNormalOnParabola(line.firstPoint())
-        this.lastParabolaNormalPoint = parabola.calculatePointOfNormalOnParabola(line.lastPoint())
+//        this.firstParabolaNormalPoint = parabola.calculatePointOfNormalOnParabola(line.firstPoint())
+//        this.lastParabolaNormalPoint = parabola.calculatePointOfNormalOnParabola(line.lastPoint())
         distanceToParabola = doubleArrayOf(VectorUtils.distance(line.firstPoint(), this.firstParabolaNormalPoint),
                 VectorUtils.distance(line.lastPoint(), this.lastParabolaNormalPoint)).average()
     }

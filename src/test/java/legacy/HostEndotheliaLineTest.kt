@@ -1,4 +1,6 @@
-import eu.glatz.imagej.legacy.GraftEndothelialLine
+package legacy
+
+import eu.glatz.imagej.legacy.HostEndothelialLine
 import eu.glatz.imagej.legacy.HostParabola
 import ij.IJ
 import ij.ImageJ
@@ -6,15 +8,27 @@ import ij.io.Opener
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
-class GraftEndothelialLineTest {
-
+class HostEndotheliaLineTest {
     @Test
     fun test() {
         val imgPath = "src/main/resources/img/10_.png"
-        val imgPathGraft = "src/main/resources/img/10__graft.png"
-        test(imgPath, imgPathGraft)
+        val imgPathHost = "src/main/resources/img/10__host.png"
+        test(imgPath, imgPathHost)
     }
 
+    @Test
+    fun test2() {
+        val imgPath = "src/main/resources/img/140.png"
+        val imgPathHost = "src/main/resources/img/140_host.png"
+        test(imgPath, imgPathHost)
+    }
+
+    @Test
+    fun test3() {
+        val imgPath = "src/main/resources/img/123.png"
+        val imgPathHost = "src/main/resources/img/123_host.png"
+        test(imgPath, imgPathHost)
+    }
 
     fun test(img: String, imgHost: String) {
         System.setProperty("plugins.dir", "D:\\Projekte\\Fiji.app\\plugins")
@@ -24,13 +38,11 @@ class GraftEndothelialLineTest {
         opener.setSilentMode(true);
         val img = opener.openImage(img);
         val imgHost = opener.openImage(imgHost);
-
         img.show()
         IJ.runPlugIn(HostParabola::class.qualifiedName, "")
-        GraftEndothelialLine.hostParabola = HostParabola.hostParabola
-
+        HostEndothelialLine.hostParabola = HostParabola.hostParabola
         imgHost.show()
-        IJ.runPlugIn(imgHost, GraftEndothelialLine::class.qualifiedName, "test -t")
+        IJ.runPlugIn(imgHost, HostEndothelialLine::class.qualifiedName, "test -t")
 
         Thread.sleep(300000)
 

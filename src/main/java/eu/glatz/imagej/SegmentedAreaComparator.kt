@@ -7,7 +7,7 @@ import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
 import java.io.File
 
-class SegmentMaskAndNet : PlugIn {
+class SegmentedAreaComparator : PlugIn {
     override fun run(args: String?) {
         val argArray = args?.split(" ") ?: return
 

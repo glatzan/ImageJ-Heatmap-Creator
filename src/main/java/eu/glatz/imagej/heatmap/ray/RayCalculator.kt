@@ -1,6 +1,10 @@
-package eu.glatz.imagej.heatmap.mask
+package eu.glatz.imagej.heatmap.ray
 
-import eu.glatz.imagej.model.Point
+import com.google.gson.Gson
+import java.awt.Point
+import java.io.File
+import java.io.FileReader
+import java.nio.file.Files
 import kotlin.math.pow
 
 /**
@@ -8,10 +12,10 @@ import kotlin.math.pow
  */
 class RayCalculator {
 
-    fun calcRaysStartAndEndPoint(): MutableList<Pair<Point, Point>> {
+    fun calcRaysStartAndEndPoint(): RayList {
         val parabola = Parabola(Point(256, 20), 0.004F)
 
-        val result = mutableListOf<Pair<Point, Point>>()
+        val result = RayList()
 
         val startX = 256
         val startY = 20
@@ -33,8 +37,8 @@ class RayCalculator {
                     endPoint.y = y.toInt()
                     break
                 } else if (x == 511) {
-                    sPoint.x = x
-                    sPoint.y = y.toInt()
+                    endPoint.x = x
+                    endPoint.y = y.toInt()
                 }
             }
             result.add(Pair(sPoint, endPoint))
@@ -67,5 +71,13 @@ class RayCalculator {
         }
 
         return result
+    }
+
+    fun saveRays(rays: MutableList<Pair<Point, Point>>, file: File) {
+        Files.write(file.toPath(), Gson().toJson(rays).toByteArray(Charsets.UTF_8))
+    }
+
+    fun loadRays(file: File): RayList {
+        return Gson().fromJson(FileReader(file), RayList::class.java)
     }
 }

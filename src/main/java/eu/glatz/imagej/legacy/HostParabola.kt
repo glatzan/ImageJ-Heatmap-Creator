@@ -1,6 +1,6 @@
 package eu.glatz.imagej.legacy
 
-import eu.glatz.imagej.heatmap.mask.Parabola
+import eu.glatz.imagej.heatmap.ray.Parabola
 import eu.glatz.imagej.model.Point
 import eu.glatz.imagej.util.DrawUtil
 import eu.glatz.imagej.util.LineFinder
@@ -91,15 +91,15 @@ class HostParabola : PlugInFilter {
 
         val topPoint = findTopPoint(topPointList, edgeDetectionProcessor)
 
-        val parabola = Parabola(topPoint, 0.001F)
-        parabola.draw(edgeDetectionProcessor, Color.BLACK, 0, edgeDetectionProcessor.width)
-
-        if(debug) {
-            ImagePlus("HostParabola_AcceptedLines", out2).show()
-            ImagePlus("HostParabola_Grey", acceptedLinesProcessor).show()
-            ImagePlus("HostParabola_EdgeDetection", edgeDetectionProcessor).show()
-        }
-        hostParabola = parabola
+//        val parabola = Parabola(topPoint, 0.001F)
+//        parabola.draw(edgeDetectionProcessor, Color.BLACK, 0, edgeDetectionProcessor.width)
+//
+//        if(debug) {
+//            ImagePlus("HostParabola_AcceptedLines", out2).show()
+//            ImagePlus("HostParabola_Grey", acceptedLinesProcessor).show()
+//            ImagePlus("HostParabola_EdgeDetection", edgeDetectionProcessor).show()
+//        }
+//        hostParabola = parabola
     }
 
     fun findTopPoint(points: List<Point>, out: ImageProcessor): Point {

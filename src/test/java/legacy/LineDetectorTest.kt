@@ -1,3 +1,5 @@
+package legacy
+
 import eu.glatz.imagej.legacy.LineDetector
 import ij.IJ
 import ij.ImageJ

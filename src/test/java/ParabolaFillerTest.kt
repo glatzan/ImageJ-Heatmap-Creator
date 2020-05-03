@@ -1,4 +1,3 @@
-import eu.glatz.imagej.legacy.ParabolaDetector
 import eu.glatz.imagej.ParabolaDrawer
 import eu.glatz.imagej.ParabolaFillerRayCreator
 import ij.IJ
@@ -32,7 +31,7 @@ class ParabolaFillerTest {
 
         val ij = ImageJ()
 
-        IJ.runPlugIn(ParabolaDetector::class.qualifiedName, "$testImg")
+//        IJ.runPlugIn(ParabolaDetector::class.qualifiedName, "$testImg")
 
         Thread.sleep(300000)
         assertThat("message").isEqualTo("message")

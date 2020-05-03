@@ -1,49 +1,56 @@
 package heatmap
 
-import eu.glatz.imagej.heatmap.mask.LineCalculator
+import eu.glatz.imagej.heatmap.mask.ConnectedLineCalculator
 import ij.IJ
 import ij.ImageJ
 import org.junit.jupiter.api.Test
 import java.awt.Color
 import java.awt.Point
 
-class LineCalculatorTest {
+/**
+ * Draws connected Lines.
+ */
+class N0_ConnectLineTest {
 
+
+    /**
+     * Draws and display four connected Line for every possible direction
+     */
     @Test
-    fun testLine(){
-        val p1 = Point(0,1)
-        val p2 = Point(190,10)
+    fun drawConnectedLineTest() {
+        val p1 = Point(0, 1)
+        val p2 = Point(190, 10)
 
 
-        val p11 = Point(30,100)
-        val p22 = Point(190,50)
+        val p11 = Point(30, 100)
+        val p22 = Point(190, 50)
 
 
-        val p1y = Point(30,0)
-        val p2y = Point(60,150)
+        val p1y = Point(30, 0)
+        val p2y = Point(60, 150)
 
-        val p1y2 = Point(90,150)
-        val p2y2 = Point(120,5)
+        val p1y2 = Point(90, 150)
+        val p2y2 = Point(120, 5)
 
         val ij = ImageJ()
 
-        val resultImage = IJ.createImage("Segmentation Result", "RGB", 200, 200,1)
+        val resultImage = IJ.createImage("Segmentation Result", "RGB", 200, 200, 1)
         val resultProcessor = resultImage.processor
 
         resultImage.show()
 
-        val line = LineCalculator(p1, p2)
-        val points = line.getIntersectionPixels()
+        val line = ConnectedLineCalculator()
+        val points = line.getIntersectionPixels(p1, p2)
 
         resultProcessor.setColor(Color.RED)
-        resultProcessor.drawPixel(p1.x,p1.y)
+        resultProcessor.drawPixel(p1.x, p1.y)
 
         resultProcessor.setColor(Color.BLUE)
-        resultProcessor.drawPixel(p2.x,p2.y)
+        resultProcessor.drawPixel(p2.x, p2.y)
 
         Thread.sleep(10)
 
-        for(p in points){
+        for (p in points) {
 
             if(p == p1 ||p == p2)
                 resultProcessor.setColor(Color.YELLOW)
@@ -62,8 +69,7 @@ class LineCalculatorTest {
         resultProcessor.setColor(Color.BLUE)
         resultProcessor.drawPixel(p22.x,p22.y)
 
-        val line2 = LineCalculator(p11, p22)
-        val points2 = line2.getIntersectionPixels()
+        val points2 = line.getIntersectionPixels(p11, p22)
 
         for(p in points2){
 
@@ -78,8 +84,7 @@ class LineCalculatorTest {
             Thread.sleep(10)
         }
 
-        val lineY = LineCalculator(p1y, p2y)
-        val pointsY = lineY.getIntersectionPixels()
+        val pointsY = line.getIntersectionPixels(p1y, p2y)
 
         for(p in pointsY){
 
@@ -95,8 +100,7 @@ class LineCalculatorTest {
         }
 
 
-        val lineY2 = LineCalculator(p1y2, p2y2)
-        val pointsY2 = lineY2.getIntersectionPixels()
+        val pointsY2 = line.getIntersectionPixels(p1y2, p2y2)
 
         for(p in pointsY2){
 
@@ -111,6 +115,6 @@ class LineCalculatorTest {
             Thread.sleep(10)
         }
 
-        Thread.sleep(50000)
+        Thread.sleep(10000)
     }
 }

@@ -1,10 +1,9 @@
-package eu.glatz.imagej
+package eu.glatz.imagej.legacy
 
 import eu.glatz.imagej.model.Point
 import eu.glatz.imagej.model.SimpleLine
 import ij.ImagePlus
 import ij.plugin.filter.PlugInFilter
-import ij.process.ColorProcessor
 import ij.process.ImageProcessor
 
 class CalculateDetachmentVolume : PlugInFilter {
@@ -55,6 +54,6 @@ class CalculateDetachmentVolume : PlugInFilter {
             }
         }
 
-        CalculateDetachmentVolume.result = result
+        Companion.result = result
     }
 }

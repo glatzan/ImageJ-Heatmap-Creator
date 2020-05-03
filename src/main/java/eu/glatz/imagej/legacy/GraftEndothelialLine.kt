@@ -1,6 +1,6 @@
 package eu.glatz.imagej.legacy
 
-import eu.glatz.imagej.heatmap.mask.Parabola
+import eu.glatz.imagej.heatmap.ray.Parabola
 import eu.glatz.imagej.model.*
 import eu.glatz.imagej.util.DrawUtil
 import eu.glatz.imagej.util.LineFinder
@@ -114,28 +114,28 @@ class GraftEndothelialLine : PlugInFilter {
 
 
     private fun isLineWithinParabola(parabola: Parabola, line: Line, thresholdDistance: Int, ip: ImageProcessor): Boolean {
-        val startParabolaPoint = parabola.calculatePointOfNormalOnParabola(line.firstPoint())
-        val endParabolaPoint = parabola.calculatePointOfNormalOnParabola(line.lastPoint())
-
-        DrawUtil.drawLine(SimpleLine(0).addPoint(startParabolaPoint, line.firstPoint()), Color.CYAN, ip)
-        DrawUtil.drawLine(SimpleLine(0).addPoint(endParabolaPoint, line.lastPoint()), Color.CYAN, ip)
-
-        val dirV1 = VectorUtils.directionVector(startParabolaPoint, line.firstPoint())
-        val dirV2 = VectorUtils.directionVector(endParabolaPoint, line.lastPoint())
-
-        val meanDirX = (dirV1.x + dirV2.x) / 2
-        val meanDirY = (dirV1.y + dirV2.y) / 2
-
-        val distV1 = VectorUtils.distance(line.firstPoint(), startParabolaPoint)
-        val distV2 = VectorUtils.distance(line.lastPoint(), endParabolaPoint)
-
-        val distance = (distV1 / distV2) / 2
-
-        if (meanDirY > 0)
-            return false;
-
-        if (distance > thresholdDistance)
-            return false
+//        val startParabolaPoint = parabola.calculatePointOfNormalOnParabola(line.firstPoint())
+//        val endParabolaPoint = parabola.calculatePointOfNormalOnParabola(line.lastPoint())
+//
+//        DrawUtil.drawLine(SimpleLine(0).addPoint(startParabolaPoint, line.firstPoint()), Color.CYAN, ip)
+//        DrawUtil.drawLine(SimpleLine(0).addPoint(endParabolaPoint, line.lastPoint()), Color.CYAN, ip)
+//
+//        val dirV1 = VectorUtils.directionVector(startParabolaPoint, line.firstPoint())
+//        val dirV2 = VectorUtils.directionVector(endParabolaPoint, line.lastPoint())
+//
+//        val meanDirX = (dirV1.x + dirV2.x) / 2
+//        val meanDirY = (dirV1.y + dirV2.y) / 2
+//
+//        val distV1 = VectorUtils.distance(line.firstPoint(), startParabolaPoint)
+//        val distV2 = VectorUtils.distance(line.lastPoint(), endParabolaPoint)
+//
+//        val distance = (distV1 / distV2) / 2
+//
+//        if (meanDirY > 0)
+//            return false;
+//
+//        if (distance > thresholdDistance)
+//            return false
 
         return true
     }

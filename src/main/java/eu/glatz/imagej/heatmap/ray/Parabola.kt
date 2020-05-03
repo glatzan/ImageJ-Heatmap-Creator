@@ -1,10 +1,9 @@
-package eu.glatz.imagej.heatmap.mask
+package eu.glatz.imagej.heatmap.ray
 
-import eu.glatz.imagej.model.Point
-import eu.glatz.imagej.util.VectorUtils
 import ij.process.ImageProcessor
 import org.matheclipse.core.eval.ExprEvaluator
 import java.awt.Color
+import java.awt.Point
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -40,7 +39,7 @@ class Parabola {
 
     fun calcDistanceOfPointToParabola(externalPoint: Point): Double {
         val parabolaPoint = calculatePointOfNormalOnParabola(externalPoint)
-        return VectorUtils.distance(externalPoint, parabolaPoint);
+        return externalPoint.distance(parabolaPoint)
     }
 
     fun calculatePointOfNormalOnParabola(externalPoint: Point): Point {

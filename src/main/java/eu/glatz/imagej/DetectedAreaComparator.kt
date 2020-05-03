@@ -7,7 +7,7 @@ import ij.plugin.PlugIn
 import java.awt.Color
 import java.io.File
 
-class DetectedAreaComparer : PlugIn {
+class DetectedAreaComparator : PlugIn {
     override fun run(p0: String?) {
 
         val args = p0?.split(" ") ?: return
