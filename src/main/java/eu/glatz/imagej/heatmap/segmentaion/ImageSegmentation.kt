@@ -13,9 +13,7 @@ object ImageSegmentation {
 
     fun imageSegmentation(processor: ImageProcessor): List<ImageSegment> {
 
-        if (!this::visitedMap.isInitialized || this.visitedMap.size != processor.width ||
-                this.visitedMap.isEmpty() || this.visitedMap[0].size != processor.height)
-            visitedMap = Array(processor.width) { BooleanArray(processor.height) }
+        clearVisitedMap(processor.width, processor.height)
 
         val segments = mutableListOf<ImageSegment>()
 
@@ -84,11 +82,23 @@ object ImageSegmentation {
 
         val map = Array(dimension.width) { BooleanArray(dimension.height) }
         for (point in connectedRegion) {
-            map[point.x-minX][point.y-minY] = true
+            map[point.x - minX][point.y - minY] = true
         }
 
         segment.pixelMap = map
 
         return segment
+    }
+
+    private fun clearVisitedMap(width: Int, height: Int) {
+        if (!this::visitedMap.isInitialized || this.visitedMap.size != width ||
+                this.visitedMap.isEmpty() || this.visitedMap[0].size != height)
+            visitedMap = Array(width) { BooleanArray(height) }
+
+        for (x in 0 until visitedMap.size) {
+            for (y in 0 until visitedMap[x].size) {
+                visitedMap[x][y] = false
+            }
+        }
     }
 }

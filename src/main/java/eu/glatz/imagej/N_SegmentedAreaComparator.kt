@@ -38,6 +38,7 @@ class N_SegmentedAreaComparator : PlugIn {
             val netSegments = ImageSegmentation.imageSegmentation(net.imageStack.getProcessor(i + 1))
 
             val result = SegmentationComparator.compareSegmentation(maskSegments,netSegments)
+            result
         }
     }
 }
