@@ -1,7 +1,9 @@
 package eu.glatz.imagej
 
 import eu.glatz.imagej.heatmap.segmentaion.ImageSegmentation
+import eu.glatz.imagej.heatmap.segmentaion.OverlappingSegmentResult
 import eu.glatz.imagej.heatmap.segmentaion.SegmentationComparator
+import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import ij.IJ
 import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
@@ -33,12 +35,18 @@ class N_SegmentedAreaComparator : PlugIn {
         val masks = opener.openFolder(maskFolder.path)
         val net = opener.openFolder(netFolder.path)
 
+        val res = mutableListOf<OverlappingSegmentResult>()
         for (i in 0 until masks.stackSize) {
             val maskSegments = ImageSegmentation.imageSegmentation(masks.imageStack.getProcessor(i + 1))
             val netSegments = ImageSegmentation.imageSegmentation(net.imageStack.getProcessor(i + 1))
 
             val result = SegmentationComparator.compareSegmentation(maskSegments,netSegments)
-            result
+            res.add(result)
         }
+
+        val img = ImageSegmentationDrawer().createSegmentationImage(res)
+        img.show()
+
+        println("end")
     }
 }

@@ -9,9 +9,11 @@ class N3_AreaComparatorTest {
 
     @Test
     fun testSegmentedAreaComparator(){
-        val masks = "D:\\Projekte\\vaa_export_calculated\\new_comp\\mask"
-        val net  = "D:\\Projekte\\vaa_export_calculated\\new_comp\\net"
+        val masks = "D:\\Projekte\\export\\vali\\18894_mask"
+        val net  = "D:\\Projekte\\export\\vali\\18894_big_150_post"
 
         IJ.runPlugIn(N_SegmentedAreaComparator::class.qualifiedName, "$masks $net")
+
+        Thread.sleep(10000)
     }
 }
