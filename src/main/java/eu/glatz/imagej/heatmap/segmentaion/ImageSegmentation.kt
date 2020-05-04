@@ -76,7 +76,7 @@ object ImageSegmentation {
             }
         }
 
-        val dimension = Rectangle(minX, minY, maxX - minX, maxY - minY)
+        val dimension = Rectangle(minX, minY, maxX - minX+1, maxY - minY+1)
 
         val segment = ImageSegment(segmentCount)
         segment.dimension = dimension
@@ -84,7 +84,7 @@ object ImageSegmentation {
 
         val map = Array(dimension.width) { BooleanArray(dimension.height) }
         for (point in connectedRegion) {
-            map[point.x][point.y] = true
+            map[point.x-minX][point.y-minY] = true
         }
 
         segment.pixelMap = map
