@@ -20,6 +20,8 @@ class N_MaskCreatorPlugin : PlugIn {
         }
 
         val topDown = argArr.size == 3 && argArr[2].contains("topdown")
+        val line = argArr.size == 3 && argArr[2].contains("line")
+        val parabola = argArr.size == 3 && argArr[2].contains("parabola")
 
         val sourceFolder = File(argArr[0])
         val targetFolder = File(argArr[1])
@@ -35,7 +37,7 @@ class N_MaskCreatorPlugin : PlugIn {
         val maskCreator = MaskCreator()
 
         var rays: RayList? = null
-        if (!topDown) {
+        if (!topDown && !line) {
             rays = RayCalculator().calcRaysStartAndEndPoint()
         }
 
@@ -46,10 +48,18 @@ class N_MaskCreatorPlugin : PlugIn {
 
             val resultImage = if (topDown) {
                 maskCreator.createMaskTopDown(processor)
+            } else if (line) {
+                maskCreator.createMaskLine(processor)
+            } else if (parabola) {
+                maskCreator.createMaskParabola(processor)
             } else {
                 maskCreator.createMaskRay(processor, rays!!)
             }
-            FileSaver(resultImage).saveAsPng(File(targetFolder, "${sourceFiles.imageStack.getSliceLabel(i).substringBeforeLast(".")}${maskPrefix}.png").absolutePath)
+
+            IJ.run(resultImage, "Options...", "iterations=3 count=1 black edm=8-bit do=Close")
+
+//            FileSaver(resultImage).saveAsPng(File(targetFolder, "${sourceFiles.imageStack.getSliceLabel(i).substringBeforeLast(".")}${maskPrefix}.png").absolutePath)
+            FileSaver(resultImage).saveAsPng(File(targetFolder, "${sourceFiles.imageStack.getSliceLabel(i)}").absolutePath)
         }
     }
 }

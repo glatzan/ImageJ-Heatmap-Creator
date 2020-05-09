@@ -26,6 +26,7 @@ class MaskDetector {
     fun detectMaskRay(rawImageProcessor: ImageProcessor, rays: RayList): ImagePlus {
         val resultImage = IJ.createImage("Mask", 512, 512, 1, 8)
         return resultImage
+
     }
 
 }

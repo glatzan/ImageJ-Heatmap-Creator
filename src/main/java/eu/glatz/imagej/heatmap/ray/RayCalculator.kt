@@ -20,13 +20,13 @@ class RayCalculator {
         val startX = 256
         val startY = 20
         val factor = 0.004F
-
-        for (x0 in 0 until 255) {
+        //255
+        for (x0 in 0 until 225) {
             val sPoint = Point()
             val endPoint = Point()
 
             var start = false
-            for (x in 0 until 512) {
+            for (x in 0 until 256) {
                 val y = (1 / (-factor * 2 * (x0 - startX))) * (x - x0) + (factor * (x0 - startX).toDouble().pow(2) + startY)
                 if (y >= 0 && !start) {
                     sPoint.x = x
@@ -36,7 +36,7 @@ class RayCalculator {
                     endPoint.x = x
                     endPoint.y = y.toInt()
                     break
-                } else if (x == 511) {
+                } else if (x == 255) {
                     endPoint.x = x
                     endPoint.y = y.toInt()
                 }
@@ -44,15 +44,14 @@ class RayCalculator {
             result.add(Pair(sPoint, endPoint))
         }
 
-        result.add(Pair(Point(255, 0), Point(255, 511)))
-
-        for (x0 in 256 until 512) {
+        //256
+        for (x0 in 286 until 512) {
             val sPoint = Point()
             val endPoint = Point()
 
             var start = false
 
-            for (x in 0 until 512) {
+            for (x in 256 until 512) {
                 val y = (1 / (-factor * 2 * (x0 - startX))) * (x - x0) + (factor * (x0 - startX).toDouble().pow(2) + startY)
                 if (y <= 511 && !start) {
                     sPoint.x = x
