@@ -1,10 +1,13 @@
-import eu.glatz.imagej.DetectedAreaComparator
+package heatmap
+
+import eu.glatz.imagej.N_SimpleAreaComparatorPlugin
 import ij.IJ
 import ij.ImageJ
 import org.junit.jupiter.api.Test
 
-class DetectAreaTest {
+class N4R_SimpleAreaComparatorTest {
 
+    //TODO refactor
     @Test
     fun test(){
 
@@ -15,7 +18,7 @@ class DetectAreaTest {
 
 
         val ij = ImageJ()
-        IJ.runPlugIn(DetectedAreaComparator::class.qualifiedName, "$imgGround $imgBig150NoPost $imgBig150Post")
+        IJ.runPlugIn(N_SimpleAreaComparatorPlugin::class.qualifiedName, "$imgGround $imgBig150NoPost $imgBig150Post")
 
         Thread.sleep(3000000)
     }

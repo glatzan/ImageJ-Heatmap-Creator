@@ -1,4 +1,4 @@
-package eu.glatz.imagej.heatmap
+package eu.glatz.imagej.heatmap.postprocess
 
 class HeatMap(val width: Int, val height: Int) {
 

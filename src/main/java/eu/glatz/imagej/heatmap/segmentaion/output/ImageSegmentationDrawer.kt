@@ -9,7 +9,7 @@ import kotlin.math.max
 
 class ImageSegmentationDrawer {
 
-    fun createSegmentationImage(segmentationList: List<OverlappingSegmentResult>, imageHeight: Int = 512) : ImagePlus {
+    fun createSegmentationImage(segmentationList: List<OverlappingSegmentResult>, titel: String, imageHeight: Int = 512) : ImagePlus {
         val resultImage = IJ.createImage("Segmentation Result", "RGB", segmentationList.size * 2, imageHeight, 1)
         val resultProcessor = resultImage.processor
 
@@ -20,6 +20,12 @@ class ImageSegmentationDrawer {
         for ((index, data) in imageData.withIndex()) {
             drawSegment(data, resultProcessor, index, maxValue)
         }
+
+        resultProcessor.setColor(Color.BLACK)
+        resultProcessor.drawString("Name: ${titel}", 10, 30)
+//        resultProcessor.drawString("MAX: ${maxOverlapping - 20} ", 10, 50)
+//        resultProcessor.drawString("Orig Arr: ${arr1} = 1.0", 10, 70)
+//        resultProcessor.drawString("Comapre Arr: ${arr2} = ${arr2.toDouble()/arr1.toDouble()} ", 10, 90)
 
         resultImage.updateAndDraw()
         return resultImage
