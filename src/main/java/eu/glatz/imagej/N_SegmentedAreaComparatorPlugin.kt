@@ -4,6 +4,7 @@ import eu.glatz.imagej.heatmap.segmentaion.ImageSegmentation
 import eu.glatz.imagej.heatmap.segmentaion.OverlappingSegmentResult
 import eu.glatz.imagej.heatmap.segmentaion.SegmentationComparator
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
+import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationToCSV
 import ij.IJ
 import ij.io.FileSaver
 import ij.plugin.FolderOpener
@@ -12,6 +13,9 @@ import java.io.File
 import java.lang.reflect.Field
 import java.nio.file.Files
 
+/**
+ * [folderMode], sourceFolder, targetFolder, [targetImageFolder], [targetCVSFile]
+ */
 class N_SegmentedAreaComparatorPlugin : PlugIn {
     override fun run(args: String) {
         val argArr = args.split(" ")
@@ -32,7 +36,8 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
 
         val groundTruthFolder = if (folderMode) File(argArr[1]) else File(argArr[0])
         val netFolder = if (folderMode) File(argArr[2]) else File(argArr[1])
-        val targetImageFolder = if (argArr.size == 4 && File(argArr[3]).isDirectory) File(argArr[3]) else null
+        val targetImageFolder = if (argArr.size >= 4 && File(argArr[3]).isDirectory) File(argArr[3]) else null
+        val targetCSVFile = if (argArr.size == 5) File(argArr[4]) else null
 
         if (!groundTruthFolder.isDirectory || !netFolder.isDirectory) {
             IJ.error("Source or target is not a folder")
@@ -47,17 +52,17 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
                 val matchingNetImages = netImageFiles.filter { it.name.startsWith(gFile.name) }
                 println("Found ${matchingNetImages.size} Images for ground truth : ${gFile.name}")
                 for (nFiles in matchingNetImages) {
-                    runFolder(gFile, nFiles, targetImageFolder)
+                    runFolder(gFile, nFiles, targetImageFolder, targetCSVFile)
                 }
             }
         } else {
-            runFolder(groundTruthFolder, netFolder, targetImageFolder)
+            runFolder(groundTruthFolder, netFolder, targetImageFolder, targetCSVFile)
         }
 
         println("end")
     }
 
-    private fun runFolder(groundTruthFolder: File, netImageFolder: File, targetImageFolder: File?) {
+    private fun runFolder(groundTruthFolder: File, netImageFolder: File, targetImageFolder: File? = null, targetCSVOut: File? = null) {
         if (groundTruthFolder.listFiles().size != netImageFolder.listFiles().size) {
             IJ.error("Number of pictures must match")
             return
@@ -76,10 +81,14 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
         }
 
         val img = ImageSegmentationDrawer().createSegmentationImage(res, "Comparison_${groundTruthFolder.name}_vs_${netImageFolder.name}")
-        img.show()
+        //img.first.show()
 
         if (targetImageFolder != null) {
-            FileSaver(img).saveAsPng(File(targetImageFolder, "${img.title}.png").absolutePath)
+            FileSaver(img.first).saveAsPng(File(targetImageFolder, "${img.first.title}.png").absolutePath)
+        }
+
+        if (targetCSVOut != null) {
+            ImageSegmentationToCSV.writeToCsv(targetCSVOut, img.second, false)
         }
 
     }

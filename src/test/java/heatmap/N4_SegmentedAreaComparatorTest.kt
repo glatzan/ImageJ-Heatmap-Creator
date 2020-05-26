@@ -25,10 +25,11 @@ class N4_SegmentedAreaComparatorTest {
     @Test
     fun testSegmentedAreaComparatorForBatches(){
         val groundTruth = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
-        val netImages  = "D:\\Projekte\\vaa_export_test_learn_set\\out"
+        val netImages  = "D:\\Projekte\\vaa_export_test_learn_set\\out2"
         val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\comparison_image"
+        val saveCSVTO = "D:\\Projekte\\vaa_export_test_learn_set\\compare.csv"
 
-        IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO")
+        IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
 
         Thread.sleep(100000)
     }
