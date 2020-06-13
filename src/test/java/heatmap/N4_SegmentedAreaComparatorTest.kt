@@ -25,7 +25,7 @@ class N4_SegmentedAreaComparatorTest {
     @Test
     fun testSegmentedAreaComparatorForBatches(){
         val groundTruth = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
-        val netImages  = "D:\\Projekte\\vaa_export_test_learn_set\\out2"
+        val netImages  = "D:\\Projekte\\vaa_export_test_learn_set\\out_post"
         val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\comparison_image"
         val saveCSVTO = "D:\\Projekte\\vaa_export_test_learn_set\\compare.csv"
 
@@ -33,4 +33,5 @@ class N4_SegmentedAreaComparatorTest {
 
         Thread.sleep(100000)
     }
+
 }

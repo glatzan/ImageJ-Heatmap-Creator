@@ -10,7 +10,6 @@ import ij.io.FileSaver
 import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
 import java.io.File
-import java.lang.reflect.Field
 import java.nio.file.Files
 
 /**
@@ -63,10 +62,11 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
     }
 
     private fun runFolder(groundTruthFolder: File, netImageFolder: File, targetImageFolder: File? = null, targetCSVOut: File? = null) {
+
         if (groundTruthFolder.listFiles().size != netImageFolder.listFiles().size) {
             IJ.error("Number of pictures must match")
-            return
         }
+
         val opener = FolderOpener()
         val masks = opener.openFolder(groundTruthFolder.path)
         val net = opener.openFolder(netImageFolder.path)
@@ -88,8 +88,9 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
         }
 
         if (targetCSVOut != null) {
-            ImageSegmentationToCSV.writeToCsv(targetCSVOut, img.second, false)
+            ImageSegmentationToCSV.writeKeyFigureDataToCsv(targetCSVOut, img.second, false)
         }
 
     }
+
 }

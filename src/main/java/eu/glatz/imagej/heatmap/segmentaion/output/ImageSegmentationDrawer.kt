@@ -55,6 +55,9 @@ class ImageSegmentationDrawer {
 
     }
 
+    /**
+     * Creates Key Figures for every image in Stack (OverlappingSegmentResult -> ImageKeyFigureData)
+     */
     fun getImageKeyFigureData(segmentationList: List<OverlappingSegmentResult>): Array<ImageKeyFigureData> {
         val imageValues = Array<ImageKeyFigureData>(segmentationList.size) { ImageKeyFigureData() }
         val uniqueMasks = mutableListOf<ImageSegment>()
