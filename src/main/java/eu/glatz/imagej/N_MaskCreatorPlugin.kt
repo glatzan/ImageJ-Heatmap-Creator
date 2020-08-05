@@ -58,7 +58,6 @@ class N_MaskCreatorPlugin : PlugIn {
 
             IJ.run(resultImage, "Options...", "iterations=3 count=1 black edm=8-bit do=Close")
 
-//            FileSaver(resultImage).saveAsPng(File(targetFolder, "${sourceFiles.imageStack.getSliceLabel(i).substringBeforeLast(".")}${maskPrefix}.png").absolutePath)
             FileSaver(resultImage).saveAsPng(File(targetFolder, "${sourceFiles.imageStack.getSliceLabel(i)}").absolutePath)
         }
     }

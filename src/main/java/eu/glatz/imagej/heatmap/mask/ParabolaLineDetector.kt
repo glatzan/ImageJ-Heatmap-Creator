@@ -14,12 +14,11 @@ class ParabolaLineDetector {
         val resultImageProcessor = resultImage.processor
         resultImageProcessor.setColor(Color.WHITE)
 
+        val resultImage2 = IJ.createImage("test", "RGB", 512, 512, 1)
+        val resultProcessor2 = resultImage2.processor
+
         val parabolaPoints = getParabolaPoints()
         val calc = ConnectedLineCalculator()
-
-//        for(p in parabolaPoints){
-//            resultImageProcessor.drawDot(p.x,p.y)
-//        }
 
         for (x in 0 until rawImageProcessor.width) {
             for (y in 0 until rawImageProcessor.height) {
@@ -27,6 +26,7 @@ class ParabolaLineDetector {
 
                 if (value.and(0xFF00u) == 0xFF00u) {
                     val shortesPoint = findShortestPointOnParabola(parabolaPoints, Point(x, y))
+
                     if (shortesPoint != null) {
                         val linePoints = calc.getIntersectionPixels(Point(x, y), shortesPoint)
                         for (p in linePoints) {
@@ -84,7 +84,7 @@ class ParabolaLineDetector {
     }
 
     private fun getParabolaPoints(): List<Point> {
-        val parabola = Parabola(Point(256, 75), 0.005F)
+        val parabola = Parabola(Point(256, 75), 0.004F)
         val points = mutableListOf<Point>()
         for (x in 0 until 512) {
             val y = parabola.calcY(x)
