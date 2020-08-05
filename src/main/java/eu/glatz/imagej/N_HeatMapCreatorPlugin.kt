@@ -50,7 +50,7 @@ class N_HeatMapCreatorPlugin : PlugIn {
         }
     }
 
-    private fun runFolder(sourceFolder: File, convertToProbabilityMap: Boolean, targetImageFolder: File?) {
+    private fun runFolder(sourceFolder: File, convertToProbabilityMap: Boolean, targetImageFolder: File?, maxV: Int? = null) {
         val heatmap = if (convertToProbabilityMap) {
             val probabilityMap = NetImageProbabilityMapCreator.convertToProbabilityMap(sourceFolder)
             HeatMapCreator.heatMapFromProbabilityMap(probabilityMap)
@@ -58,7 +58,7 @@ class N_HeatMapCreatorPlugin : PlugIn {
             HeatMapCreator.heatMapFromFolder(sourceFolder)
         }
 
-        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}")
+        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}", maxV)
         image.show()
 
         if (targetImageFolder != null) {

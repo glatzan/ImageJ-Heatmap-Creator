@@ -12,9 +12,9 @@ class N4_IndividualSegmentedImageAreaComparatorTest {
      */
     @Test
     fun testSegmentedAreaComparatorForBatches() {
-        val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_vali_mask_optimized_folders"
-        val netImages = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
-        val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_individual.csv"
+        val groundTruth = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
+        val netImages = "D:\\Projekte\\vaa_export_test_learn_set\\out"
+        val saveCSVTO = "D:\\Projekte\\vaa_export_test_learn_set\\compare_img.csv"
 
         IJ.runPlugIn(N_IndividualSegmentedImageAreaComparatorPlugin::class.qualifiedName, "$groundTruth $netImages $saveCSVTO")
 
