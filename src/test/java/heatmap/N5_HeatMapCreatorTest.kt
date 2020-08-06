@@ -9,7 +9,7 @@ class N5_HeatMapCreatorTest {
     @Test
     fun createHeatMap() {
         val sourceDir = "D:\\Projekte\\vaa_vali_compare\\8_net_prediction_pms"
-        val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\10_net_pms_heatmaps"
+        val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\15_vali_heatmap_grey"
 
         // run from net folder
         // IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "folder_mode toProbabilityMap $sourceDir $saveImageTO")

@@ -1,9 +1,7 @@
 package eu.glatz.imagej
 
-import eu.glatz.imagej.heatmap.postprocess.HeatMap
 import eu.glatz.imagej.heatmap.postprocess.HeatMapCreator
 import eu.glatz.imagej.heatmap.postprocess.NetImageProbabilityMapCreator
-import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import ij.IJ
 import ij.io.FileSaver
 import ij.plugin.PlugIn
@@ -58,7 +56,7 @@ class N_HeatMapCreatorPlugin : PlugIn {
             HeatMapCreator.heatMapFromFolder(sourceFolder)
         }
 
-        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}")
+        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}", true, false)
         image.show()
 
         if (targetImageFolder != null) {
