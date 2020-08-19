@@ -58,7 +58,7 @@ class N_HeatMapCreatorPlugin : PlugIn {
             HeatMapCreator.heatMapFromFolder(sourceFolder)
         }
 
-        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}", maxV)
+        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}", true, false, maxV)
         image.show()
 
         if (targetImageFolder != null) {

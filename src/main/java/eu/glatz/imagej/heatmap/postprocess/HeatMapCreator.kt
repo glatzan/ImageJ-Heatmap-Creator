@@ -58,11 +58,11 @@ object HeatMapCreator {
         return result
     }
 
-    fun heatmapToInterpolatedImage(heatMap: HeatMap, interpolationKernel: Int = 3, imageName: String = "Heatmap", maxV: Int? = null): ImagePlus {
+    fun heatmapToInterpolatedImage(heatMap: HeatMap, interpolationKernel: Int = 3, imageName: String = "Heatmap", greyScale: Boolean = false, interpolate: Boolean = true, maxV: Int? = null): ImagePlus {
         val kernelOffset = Math.floor(((interpolationKernel.toDouble() / 2))).toInt()
-        val image = IJ.createImage(imageName, "RGB", heatMap.width, heatMap.height, 1)
-        val pB = image.processor as ColorProcessor
-        pB.setColor(Color(255, 255, 191))
+        val image = if (!greyScale) IJ.createImage(imageName, "RGB", heatMap.width, heatMap.height, 1) else IJ.createImage(imageName, 512, 512, 1, 8)
+        val pB = image.processor
+        if (!greyScale) pB.setColor(Color(255, 255, 191)) else pB.setColor(Color.WHITE)
         pB.fillRect(0, 0, heatMap.width, heatMap.height)
 
         val max = maxV ?: heatMap.findMaxValue()
@@ -73,18 +73,24 @@ object HeatMapCreator {
         for (x in kernelOffset until heatMap.width - kernelOffset - 1 step 1) {
             for (y in kernelOffset until heatMap.height - kernelOffset - 1 step 1) {
 
-                for (xx in -kernelOffset..kernelOffset) {
-                    for (yy in -kernelOffset..kernelOffset) {
-                        if (heatMap.data[x + xx][y + yy] != 0) {
-                            value += heatMap.data[x + xx][y + yy]
-                            count++
+                if (interpolate)
+                    for (xx in -kernelOffset..kernelOffset) {
+                        for (yy in -kernelOffset..kernelOffset) {
+                            if (heatMap.data[x + xx][y + yy] != 0) {
+                                value += heatMap.data[x + xx][y + yy]
+                                count++
+                            }
                         }
-                    }
+                    } else {
+                    count = 1
+                    value = 255 - heatMap.data[x][y]
                 }
 
                 if (count > 0) {
-                    val calc = 1 - (value / count).toDouble() / max
-                    pB.setColor(Color(255, (255 * calc).toInt(), (191 * calc).toInt()))
+                    if (!greyScale) {
+                        val calc = 1 - (value / count).toDouble() / max
+                        pB.setColor(Color(255, (255 * calc).toInt(), (191 * calc).toInt()))
+                    } else pB.setColor(value)
                     pB.drawPixel(x, y)
                 }
 
