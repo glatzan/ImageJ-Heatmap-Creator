@@ -12,7 +12,7 @@ import kotlin.math.floor
 
 object NetImageProbabilityMapCreator {
 
-    fun convertToProbabilityMap(folder: File, weights: FloatArray = floatArrayOf(0.1F, 0.1F, 0.2F, 0.3F, 0.5F, 0.3F, 0.2F, 0.1F, 0.1F)): ProbabilityMap {
+    fun convertToProbabilityMap(folder: File, weights: FloatArray = floatArrayOf( 0.2F, 0.8F, 0.9F, 0.8F, 0.2F)): ProbabilityMap {
         val imageStack = loadStack(folder)
         val imageCount = imageStack.imageStackSize
 

@@ -119,7 +119,7 @@ object HeatMapCreator {
         results.save(target.path)
     }
 
-    private fun calculateCartesianFromRadial(length: Int, r: Double, center: Int, maxX: Int, maxY: Int): Point {
+     fun calculateCartesianFromRadial(length: Int, r: Double, center: Int, maxX: Int, maxY: Int): Point {
         val x = ((length - center) * cos(2 * Math.PI - Math.toRadians(r))).toInt() + center
         val y = ((length - center) * sin(2 * Math.PI - Math.toRadians(r))).toInt() + center
         return Point(if (x <= maxX) x else maxX, if (y <= maxY) y else maxY)
