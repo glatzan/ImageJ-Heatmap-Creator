@@ -24,9 +24,9 @@ class N4_SegmentedAreaComparatorTest {
      */
     @Test
     fun testSegmentedAreaComparatorForBatches(){
-        val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_vali_mask_optimized_folders"
-        val netImages = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
-        val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_image_sequence.csv"
+        val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_x4_vali_mask_optimzed_1000_folder"
+        val netImages = "D:\\Projekte\\vaa_vali_compare\\8_net_prediction_pms"
+        val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_image_sequence_pms.csv"
         val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\12_compre_ground_net"
 
         IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
