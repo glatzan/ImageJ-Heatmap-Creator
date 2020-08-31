@@ -4,9 +4,9 @@ import java.awt.Rectangle
 
 class OverlappingSegment {
 
-    lateinit var maskSegment : ImageSegment
+    lateinit var maskSegment : SegmentedImage
 
-    lateinit var  netSegment : ImageSegment
+    lateinit var  netSegment : SegmentedImage
 
     lateinit var overLappingPixelMap: Array<BooleanArray>
 

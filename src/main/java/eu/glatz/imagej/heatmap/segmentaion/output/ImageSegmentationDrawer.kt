@@ -1,6 +1,6 @@
 package eu.glatz.imagej.heatmap.segmentaion.output
 
-import eu.glatz.imagej.heatmap.segmentaion.ImageSegment
+import eu.glatz.imagej.heatmap.segmentaion.SegmentedImage
 import eu.glatz.imagej.heatmap.segmentaion.OverlappingSegmentResult
 import ij.IJ
 import ij.ImagePlus
@@ -10,7 +10,7 @@ import kotlin.math.max
 
 class ImageSegmentationDrawer {
 
-    fun createSegmentationImage(segmentationList: List<OverlappingSegmentResult>, titel: String, imageHeight: Int = 512, drawKeyFigures: Boolean = true): Pair<ImagePlus, ImageKeyFigureData> {
+    fun createSegmentationImage(segmentationList: List<OverlappingSegmentResult>, titel: String, imageHeight: Int = 512, drawKeyFigures: Boolean = true, drawInfoText : Boolean = false): Pair<ImagePlus, ImageKeyFigureData> {
         val resultImage = IJ.createImage(titel, "RGB", segmentationList.size * 2, imageHeight, 1)
         val resultProcessor = resultImage.processor
 
@@ -24,12 +24,13 @@ class ImageSegmentationDrawer {
 
         val stackKeyFigureData = getKeyFigureDataForStack(imageData, titel)
 
-        resultProcessor.setColor(Color.BLACK)
-        resultProcessor.drawString("Name: ${titel}", 10, 30)
-        resultProcessor.drawString("Matching: ${stackKeyFigureData.overlappingNetMaskPixelCount} ", 10, 50)
-        resultProcessor.drawString("Net/Mask: ${if (stackKeyFigureData.overlappingMaskTotalPixelCount > 0) stackKeyFigureData.overlappingNetTotalPixelCount.toDouble() / stackKeyFigureData.overlappingMaskTotalPixelCount.toDouble() else 0}", 10, 70)
-        resultProcessor.drawString("Not matched Net Pixel: ${stackKeyFigureData.noneOverlappingNetPixelCount} (${if (stackKeyFigureData.overlappingMaskTotalPixelCount > 0) stackKeyFigureData.noneOverlappingNetPixelCount.toDouble() / stackKeyFigureData.overlappingMaskTotalPixelCount.toDouble() else 0})", 10, 90)
-
+        if(drawInfoText) {
+            resultProcessor.setColor(Color.BLACK)
+            resultProcessor.drawString("Name: ${titel}", 10, 30)
+            resultProcessor.drawString("Matching: ${stackKeyFigureData.overlappingNetMaskPixelCount} ", 10, 50)
+            resultProcessor.drawString("Net/Mask: ${if (stackKeyFigureData.overlappingMaskTotalPixelCount > 0) stackKeyFigureData.overlappingNetTotalPixelCount.toDouble() / stackKeyFigureData.overlappingMaskTotalPixelCount.toDouble() else 0}", 10, 70)
+            resultProcessor.drawString("Not matched Net Pixel: ${stackKeyFigureData.noneOverlappingNetPixelCount} (${if (stackKeyFigureData.overlappingMaskTotalPixelCount > 0) stackKeyFigureData.noneOverlappingNetPixelCount.toDouble() / stackKeyFigureData.overlappingMaskTotalPixelCount.toDouble() else 0})", 10, 90)
+        }
         resultImage.updateAndDraw()
         return Pair(resultImage, stackKeyFigureData)
     }
@@ -60,8 +61,8 @@ class ImageSegmentationDrawer {
      */
     fun getImageKeyFigureData(segmentationList: List<OverlappingSegmentResult>): Array<ImageKeyFigureData> {
         val imageValues = Array<ImageKeyFigureData>(segmentationList.size) { ImageKeyFigureData() }
-        val uniqueMasks = mutableListOf<ImageSegment>()
-        val uniqueNet = mutableListOf<ImageSegment>()
+        val uniqueMasks = mutableListOf<SegmentedImage>()
+        val uniqueNet = mutableListOf<SegmentedImage>()
 
         for ((index, segment) in segmentationList.withIndex()) {
 

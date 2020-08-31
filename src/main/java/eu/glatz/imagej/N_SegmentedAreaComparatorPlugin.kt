@@ -94,3 +94,26 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
     }
 
 }
+
+/**
+ * Compares ground truth with a folder net image folder. Matches areas.
+ */
+fun main(vararg args: String) {
+//    // one to one compare
+//    val groundTruth = "D:\\Projekte\\export\\vali\\18894_mask"
+//    val netImages = "D:\\Projekte\\export\\vali\\18894_big_150_post"
+//
+//    IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "$groundTruth $netImages ")
+//
+//    Thread.sleep(10000)
+
+
+    // folder compare
+    val groundTruth = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
+    val netImages = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare"
+    val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_result"
+    val saveCSVTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_result\\vaa_vali_comparecomp2_net.csv"
+
+    IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
+}
+

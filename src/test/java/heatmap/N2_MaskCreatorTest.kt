@@ -37,8 +37,8 @@ class N2_MaskCreatorTest {
      */
     @Test
     fun createMasksParabola(){
-        val sourceDir = "D:\\Projekte\\vaa_vali_compare\\3_x1_validation_red_green_corr_batch2"
-        val targetDir =  "D:\\Projekte\\vaa_vali_compare\\4_x3_vali_masks_corr"
+        val sourceDir = "D:\\Projekte\\vaa_export_test_learn_set\\out"
+        val targetDir =  "D:\\Projekte\\vaa_export_test_learn_set\\out_post_sensitve"
 
         IJ.runPlugIn(N_MaskCreatorPlugin::class.qualifiedName, "$sourceDir $targetDir parabola")
     }

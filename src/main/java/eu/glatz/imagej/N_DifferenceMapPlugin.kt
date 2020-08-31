@@ -34,7 +34,7 @@ class N_DifferenceMapPlugin : PlugIn {
             println("Found ${matchingNetImages.size} Images for ground truth : ${gFile.name}")
             for (nFiles in matchingNetImages) {
                 val map = DifferenceMapCreator.differenceMapFromFolder(gFile, nFiles)
-                val image = HeatMapCreator.heatmapToInterpolatedImage(map, imageName = "DifferenceMap_", greyScale = true, interpolate = false)
+                val image = HeatMapCreator.heatmapToInterpolatedImage(map, imageName = "DifferenceMap_${nFiles.name}", greyScale = true, interpolate = false)
                 image.show()
 
                 if (targetFolder != null) {
@@ -46,10 +46,10 @@ class N_DifferenceMapPlugin : PlugIn {
 }
 
 fun main(vararg args: String) {
-    val masks = "D:\\Projekte\\vaa_vali_compare\\5_x4_vali_mask_optimzed_1000_folder"
-    val net = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
+    val masks = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
+    val net = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare"
 
-    val target = "D:\\Projekte\\vaa_vali_compare\\50_difference_maps"
+    val target = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_difference_map"
 
     IJ.runPlugIn(N_DifferenceMapPlugin::class.qualifiedName, "$masks $net $target")
 }

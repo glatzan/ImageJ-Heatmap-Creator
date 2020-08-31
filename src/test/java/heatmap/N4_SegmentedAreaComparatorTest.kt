@@ -20,18 +20,16 @@ class N4_SegmentedAreaComparatorTest {
     }
 
     /**
-     * Compares some ground truth data with many image folders. Matches areas.
+     * Compares some ground turth data with many image folders. Matches areas.
      */
     @Test
     fun testSegmentedAreaComparatorForBatches(){
-        val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_vali_mask_optimized_folders"
-        val netImages = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
-        val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_image_sequence.csv"
-        val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\12_compre_ground_net"
+        val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_x4_vali_mask_optimzed_1000_folder"
+        val netImages  = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
+        val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\12_compare_ground_net"
+        val saveCSVTO = "D:\\Projekte\\vaa_vali_comparecomp2_net.csv"
 
         IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
-
-        Thread.sleep(100000)
     }
 
 }

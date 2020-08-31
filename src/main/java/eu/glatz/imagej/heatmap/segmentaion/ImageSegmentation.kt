@@ -11,11 +11,11 @@ object ImageSegmentation {
 
     lateinit var visitedMap: Array<BooleanArray>
 
-    fun imageSegmentation(processor: ImageProcessor): List<ImageSegment> {
+    fun imageSegmentation(processor: ImageProcessor): List<SegmentedImage> {
 
         clearVisitedMap(processor.width, processor.height)
 
-        val segments = mutableListOf<ImageSegment>()
+        val segments = mutableListOf<SegmentedImage>()
 
         for (x in 0 until processor.width) {
             for (y in 0 until processor.height) {
@@ -27,7 +27,7 @@ object ImageSegmentation {
     }
 
 
-    private fun imageSegmentation(processor: ImageProcessor, start: Point, visitedMap: Array<BooleanArray>, segmentCount: Int): ImageSegment {
+    private fun imageSegmentation(processor: ImageProcessor, start: Point, visitedMap: Array<BooleanArray>, segmentCount: Int): SegmentedImage {
 
         val connectedRegion = mutableListOf<Point>()
         val activeFront = Stack<Point>()
@@ -76,7 +76,7 @@ object ImageSegmentation {
 
         val dimension = Rectangle(minX, minY, maxX - minX+1, maxY - minY+1)
 
-        val segment = ImageSegment(segmentCount)
+        val segment = SegmentedImage(segmentCount)
         segment.dimension = dimension
         segment.pixels = connectedRegion.toTypedArray()
 

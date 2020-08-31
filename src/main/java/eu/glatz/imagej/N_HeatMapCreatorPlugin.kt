@@ -66,3 +66,14 @@ class N_HeatMapCreatorPlugin : PlugIn {
         }
     }
 }
+
+fun main(vararg args: String) {
+    val sourceDir = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_0.1_post"
+    val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_0.1_post_heatmap_raw"
+
+    // run from net folder
+    // IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "folder_mode toProbabilityMap $sourceDir $saveImageTO")
+    // run for ground truth or probability map folder
+    IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "folder_mode $sourceDir $saveImageTO")
+}
+

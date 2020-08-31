@@ -2,10 +2,10 @@ package eu.glatz.imagej.heatmap.segmentaion
 
 object SegmentationComparator {
 
-    fun compareSegmentation(maskSegments: List<ImageSegment>, netSegment: List<ImageSegment>): OverlappingSegmentResult {
+    fun compareSegmentation(maskSegments: List<SegmentedImage>, netSegment: List<SegmentedImage>): OverlappingSegmentResult {
         val overlappingSegments = mutableListOf<OverlappingSegment>()
-        val overlappingMasks = mutableListOf<ImageSegment>()
-        val nonOverlappingNets = mutableListOf<ImageSegment>()
+        val overlappingMasks = mutableListOf<SegmentedImage>()
+        val nonOverlappingNets = mutableListOf<SegmentedImage>()
 
         for (netSeg in netSegment) {
             val res = compareSegmentation(netSeg, maskSegments)
@@ -25,29 +25,13 @@ object SegmentationComparator {
         return result
     }
 
-    fun compareSegmentation(netSegment: ImageSegment, maskSegments: List<ImageSegment>): List<OverlappingSegment> {
+    fun compareSegmentation(netSegment: SegmentedImage, maskSegments: List<SegmentedImage>): List<OverlappingSegment> {
         val resultList = mutableListOf<OverlappingSegment>()
 
         for (maskSegment in maskSegments) {
             val intersection = maskSegment.dimension.intersection(netSegment.dimension)
 
             if (!intersection.isEmpty) {
-
-//                for(x in 0 until maskSegment.pixelMap.size){
-//                    for(y in 0 until maskSegment.pixelMap[x].size){
-//                        print(if(maskSegment.pixelMap[x][y]) "1 " else "0 " )
-//                    }
-//                    println()
-//                }
-//
-//                println("--------------------------------------------")
-//
-//                for(x in 0 until netSegment.pixelMap.size){
-//                    for(y in 0 until netSegment.pixelMap[x].size){
-//                        print(if(netSegment.pixelMap[x][y]) "1 " else "0 " )
-//                    }
-//                    println()
-//                }
 
                 val result = OverlappingSegment()
                 result.maskSegment = maskSegment
@@ -73,14 +57,6 @@ object SegmentationComparator {
 
                 }
 
-//                println("--------------------------------------------")
-//
-//                for(x in 0 until result.overLappingPixelMap.size){
-//                    for(y in 0 until result.overLappingPixelMap[x].size){
-//                        print(if(result.overLappingPixelMap[x][y]) "1 " else "0 " )
-//                    }
-//                    println()
-//                }
                 resultList.add(result)
             }
         }

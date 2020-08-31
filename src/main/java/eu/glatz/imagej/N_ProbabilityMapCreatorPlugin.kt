@@ -5,6 +5,7 @@ import ij.IJ
 import ij.plugin.PlugIn
 import java.io.File
 import java.nio.file.Files
+import java.util.concurrent.Executors
 
 /**
  * Creates a probability map for an image Folder
@@ -38,11 +39,23 @@ class N_ProbabilityMapCreatorPlugin : PlugIn {
 
         if (folderMode) {
             val sourceFolderFiles = sourceFolder.listFiles().filter { Files.isDirectory(it.toPath()) }
+
+            val executor = Executors.newFixedThreadPool(24)
+            println("Finished all threads")
             for (sFile in sourceFolderFiles) {
-                val tFolder = File(targetFolder, "${sFile.name}${folder_suffix}")
-                Files.createDirectories(tFolder.toPath())
-                runFolder(sFile, tFolder)
+                val worker = Runnable {
+                    val tFolder = File(targetFolder, "${sFile.name}${folder_suffix}")
+                    Files.createDirectories(tFolder.toPath())
+                    runFolder(sFile, tFolder)
+                }
+                executor.execute(worker)
             }
+
+            executor.shutdown()
+
+            while (!executor.isTerminated) {
+            }
+
         } else {
             runFolder(sourceFolder, targetFolder)
         }
@@ -54,3 +67,13 @@ class N_ProbabilityMapCreatorPlugin : PlugIn {
         val stack = NetImageProbabilityMapCreator.writeAsStackToFolder(probabilityMap, targetFolder, binary)
     }
 }
+
+
+fun main(vararg args: String) {
+    val sourceDir = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_0.1"
+    val targetDir = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_0.1_post"
+    val targetFolderSuffix = "_pm"
+
+    IJ.runPlugIn(N_ProbabilityMapCreatorPlugin::class.qualifiedName, "folder_mode $sourceDir $targetDir $targetFolderSuffix")
+}
+

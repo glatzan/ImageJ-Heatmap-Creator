@@ -3,7 +3,7 @@ package eu.glatz.imagej.heatmap.segmentaion
 import java.awt.Point
 import java.awt.Rectangle
 
-class ImageSegment(var number: Int) {
+open class SegmentedImage(var number: Int) {
 
     lateinit var dimension: Rectangle
 
