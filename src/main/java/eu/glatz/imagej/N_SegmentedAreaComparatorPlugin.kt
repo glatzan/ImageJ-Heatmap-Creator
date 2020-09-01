@@ -109,10 +109,10 @@ fun main(vararg args: String) {
 
 
     // folder compare
-    val groundTruth = "D:\\Projekte\\vaa_export_test_learn_set\\ground_truth_ray"
-    val netImages = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare"
+    val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_x4_vali_mask_optimzed_1000_folder"
+    val netImages = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
     val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_result"
-    val saveCSVTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_result\\vaa_vali_comparecomp2_net.csv"
+    val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_250_05.csv"
 
     IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
 }

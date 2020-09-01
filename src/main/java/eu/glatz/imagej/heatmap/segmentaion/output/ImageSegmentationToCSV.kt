@@ -108,4 +108,5 @@ object ImageSegmentationToCSV {
 
         results.save(file.path)
     }
+
 }
