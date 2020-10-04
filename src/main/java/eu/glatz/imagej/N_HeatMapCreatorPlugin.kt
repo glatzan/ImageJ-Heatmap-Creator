@@ -5,61 +5,78 @@ import eu.glatz.imagej.heatmap.postprocess.HeatMapCreator
 import eu.glatz.imagej.heatmap.postprocess.NetImageProbabilityMapCreator
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import ij.IJ
+import ij.Macro
 import ij.io.FileSaver
 import ij.plugin.PlugIn
 import java.io.File
 import java.nio.file.Files
 
 class N_HeatMapCreatorPlugin : PlugIn {
-    override fun run(args: String) {
-        val argArr = args.split(" ")
-        var folderMode = false
+    override fun run(args: String?) {
 
-        if (argArr.size < 1) {
-            IJ.error("Provide source Folder")
-            return
+        var subFolderMode = true
+        var sourceFolder: String? = null
+        var targetFolder: String? = null
+        var postProcess = false
+        var interpolate = false
+        var grayscale = true
+        var prefix: String = ""
+
+        fun processCMD(str: String) {
+            when {
+                str.startsWith("-f=") -> subFolderMode = str.substringAfter("-f=").toLowerCase() == "true"
+                str.startsWith("-s=") -> sourceFolder = str.substringAfter("-s=").replace("\"", "")
+                str.startsWith("-t=") -> targetFolder = str.substringAfter("-t=").replace("\"", "")
+                str.startsWith("-p=") -> postProcess = str.substringAfter("-p=").toLowerCase() == "true"
+                str.startsWith("-i=") -> interpolate = str.substringAfter("-i=").toLowerCase() == "true"
+                str.startsWith("-g=") -> grayscale = str.substringAfter("-g=").toLowerCase() == "true"
+                str.startsWith("-prefix=") -> prefix = str.substringAfter("-prefix=").replace("\"", "")
+            }
         }
 
-        if (argArr[0] == "folder_mode")
-            folderMode = true
-
-        if (folderMode && argArr.size < 2) {
-            IJ.error("Provide source")
-            return
-        }
-
-        val convertToProbabilityMap = argArr.size > 2 && argArr[1] == "toProbabilityMap"
-
-        val offset = if (folderMode && convertToProbabilityMap) 2 else if (folderMode || convertToProbabilityMap) 1 else 0
-
-        val sourceFolder = if (argArr.size > offset) File(argArr[offset]) else null
-        val targetImageFolder = if (argArr.size > offset + 1) File(argArr[offset + 1]) else null
-
-        if (!sourceFolder!!.isDirectory || (targetImageFolder != null && !targetImageFolder.isDirectory)) {
-            IJ.error("Source or target is not a folder")
-            return
-        }
-
-        if (folderMode) {
-            val sourceFolderFiles = sourceFolder.listFiles().filter { Files.isDirectory(it.toPath()) }
-            for (sFiles in sourceFolderFiles) {
-                runFolder(sFiles, convertToProbabilityMap, targetImageFolder)
+        if (args.isNullOrBlank() || args.split(" ").isEmpty()) {
+            IJ.log("No args $args ${Macro.getOptions()}")
+            if (Macro.getOptions() != null && Macro.getOptions().split(" ").isNotEmpty()){
+                Macro.getOptions().split(" ").forEach {
+                    processCMD(it)
+                }
+            }else{
+                sourceFolder = IJ.getDirectory("Choose source Dir ");
+                targetFolder = IJ.getDirectory("Choose target Dir ");
             }
         } else {
-            runFolder(sourceFolder, convertToProbabilityMap, targetImageFolder)
+            IJ.log("Args: ${args}")
+            args.split(" ").forEach {
+                processCMD(it)
+            }
+        }
+
+        if (sourceFolder == null || targetFolder == null ||
+                !File(sourceFolder).isDirectory || !File(targetFolder).isDirectory) {
+            IJ.error("Source or target is not a folder ($sourceFolder) / $targetFolder)")
+            return
+        }
+
+        if (subFolderMode) {
+            val sourceFolderFiles = File(sourceFolder).listFiles().filter { Files.isDirectory(it.toPath()) }
+            for (sFiles in sourceFolderFiles) {
+                IJ.log("Running folder ${sFiles.absolutePath}")
+                runFolder(sFiles, postProcess, File(targetFolder), grayscale, interpolate, prefix)
+            }
+        } else {
+            runFolder(File(sourceFolder), postProcess, File(targetFolder), grayscale, interpolate, prefix)
         }
     }
 
-    private fun runFolder(sourceFolder: File, convertToProbabilityMap: Boolean, targetImageFolder: File?, maxV: Int? = null) {
-        val heatmap = if (convertToProbabilityMap) {
+    private fun runFolder(sourceFolder: File, postProcess: Boolean, targetImageFolder: File?, greyScale: Boolean, interpolate: Boolean, imagePrefix: String = "", maxV: Int? = null) {
+        val heatmap = if (postProcess) {
             val probabilityMap = NetImageProbabilityMapCreator.convertToProbabilityMap(sourceFolder)
             HeatMapCreator.heatMapFromProbabilityMap(probabilityMap)
         } else {
             HeatMapCreator.heatMapFromFolder(sourceFolder)
         }
 
-        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "Heatmap_${sourceFolder.name}", true, false, maxV)
-        image.show()
+        val image = HeatMapCreator.heatmapToInterpolatedImage(heatmap, 3, "$imagePrefix${sourceFolder.name}", greyScale, interpolate, maxV)
 
         if (targetImageFolder != null) {
             FileSaver(image).saveAsPng(File(targetImageFolder, "${image.title}.png").absolutePath)
@@ -68,12 +85,8 @@ class N_HeatMapCreatorPlugin : PlugIn {
 }
 
 fun main(vararg args: String) {
-    val sourceDir = "D:\\Projekte\\vaa_vali_compare\\9_net_winners_0.1"
-    val saveImageTO = "D:\\Projekte\\vaa_vali_compare\\10_net_01_heatmaps_raw"
-
-    // run from net folder
-    // IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "folder_mode toProbabilityMap $sourceDir $saveImageTO")
-    // run for ground truth or probability map folder
-    IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "folder_mode $sourceDir $saveImageTO")
+    val sourceDir = "D:\\Projekte\\_VAA\\set_validation\\1_mask_images\\2_mask_folders"
+    val saveImageTO = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_mask_raw"
+    IJ.runPlugIn(N_HeatMapCreatorPlugin::class.qualifiedName, "-f=true -s=\"$sourceDir\" -t=\"$saveImageTO\" -g=true")
 }
 

@@ -62,7 +62,7 @@ object HeatMapCreator {
         val kernelOffset = Math.floor(((interpolationKernel.toDouble() / 2))).toInt()
         val image = if (!greyScale) IJ.createImage(imageName, "RGB", heatMap.width, heatMap.height, 1) else IJ.createImage(imageName, 512, 512, 1, 8)
         val pB = image.processor
-        if (!greyScale) pB.setColor(Color(255, 255, 191)) else pB.setColor(Color.WHITE)
+        if (!greyScale) pB.setColor(Color(255, 255, 191)) else pB.setColor(Color.BLACK)
         pB.fillRect(0, 0, heatMap.width, heatMap.height)
 
         val max = maxV ?: heatMap.findMaxValue()
@@ -81,9 +81,10 @@ object HeatMapCreator {
                                 count++
                             }
                         }
-                    } else {
+                    }
+                else {
                     count = 1
-                    value = 255 - heatMap.data[x][y]
+                    value = heatMap.data[x][y]
                 }
 
                 if (count > 0) {
@@ -119,7 +120,7 @@ object HeatMapCreator {
         results.save(target.path)
     }
 
-     fun calculateCartesianFromRadial(length: Int, r: Double, center: Int, maxX: Int, maxY: Int): Point {
+    fun calculateCartesianFromRadial(length: Int, r: Double, center: Int, maxX: Int, maxY: Int): Point {
         val x = ((length - center) * cos(2 * Math.PI - Math.toRadians(r))).toInt() + center
         val y = ((length - center) * sin(2 * Math.PI - Math.toRadians(r))).toInt() + center
         return Point(if (x <= maxX) x else maxX, if (y <= maxY) y else maxY)

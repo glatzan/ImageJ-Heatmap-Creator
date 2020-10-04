@@ -20,14 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c063d12e-de87-45d9-8f9a-f62735ceefac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_HeatMapSurfaceComparatorPlugin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/HeatMapSurfaceComparator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ImageJPlugins_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/StackLoaderPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_DifferenceMapPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_DifferenceMapPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_HeatMapCreatorPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_HeatMapCreatorPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_HeatMapSurfaceComparatorPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_HeatMapSurfaceComparatorPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_MaskDetectorPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_ProbabilityMapCreatorPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_SlidePostprocessingPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_SegmentedAreaComparatorPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_SegmentedAreaComparatorPlugin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/output/ImageKeyFigureData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/output/ImageKeyFigureData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/output/ImageSegmentationToCSV.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/output/ImageSegmentationToCSV.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/N_SimpleAreaComparatorPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/postprocess/HeatMapCreator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/postprocess/HeatMapCreator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/HeatMapSurfaceComparator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eu/glatz/imagej/heatmap/segmentaion/HeatMapSurfaceComparator.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugins.config" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugins.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N0_ConnectLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heatmap/N0_ConnectLineTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N1_RayCreatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heatmap/N1_RayCreatorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N2_MaskCreatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heatmap/N2_MaskCreatorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N4R_SimpleAreaComparatorTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N4_IndividualSegmentedImageAreaComparatorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/heatmap/N4_IndividualSegmentedImageAreaComparatorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N4_SegmentedAreaComparatorTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/heatmap/N5_HeatMapCreatorTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/legacy/GraftEndothelialLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/legacy/GraftEndothelialLineTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/legacy/HostEndotheliaLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/legacy/HostEndotheliaLineTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/legacy/HostParabolaTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/legacy/HostParabolaTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/legacy/LineDetectorTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/legacy/LineDetectorTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/legacy/ProcessGraftTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/legacy/ProcessGraftTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ImageJPlugins.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/ImageJPlugins.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/JoinedLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/JoinedLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Line.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/LineClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/LineClassification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/SimpleLine$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/SimpleLine$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/SimpleLine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/SimpleLine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/model/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/DrawUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/DrawUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/LineFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/LineFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/VectorUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/eu/glatz/imagej/util/VectorUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugins.config" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugins.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +88,13 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="JupyterTrust" id="9fa81e08-6201-4c92-869f-601f6a21c957" />
+  <component name="MavenImportPreferences">
+    <option name="disabledProfiles">
+      <list>
+        <option value="locale" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1ZOmrKU6aGIODMPQ0V7KBwznhQC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -70,9 +107,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TomeyReader2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TomeyReader2.0" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -97,7 +134,7 @@
       <recent name="C:\Users\Andreas\IdeaProjects\ImageJPlugins\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.N_HeatMapSurfaceComparatorPluginKt">
+  <component name="RunManager" selected="Kotlin.N_DifferenceMapPluginKt">
     <configuration name="N_DifferenceMapPluginKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ImageJPlugins" />
       <option name="VM_PARAMETERS" />
@@ -137,19 +174,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="N_ProbabilityMapCreatorPluginKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="ImageJPlugins" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="eu.glatz.imagej.N_ProbabilityMapCreatorPluginKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="N_SegmentedAreaComparatorPluginKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="ImageJPlugins" />
       <option name="VM_PARAMETERS" />
@@ -163,6 +187,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="N_SlidePostprocessingPluginKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="ImageJPlugins" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="eu.glatz.imagej.N_SlidePostprocessingPluginKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="js.build_tools.grunt">
       <node-interpreter value="project" />
       <envs />
@@ -170,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.N_DifferenceMapPluginKt" />
         <item itemvalue="Kotlin.N_HeatMapSurfaceComparatorPluginKt" />
         <item itemvalue="Kotlin.N_HeatMapCreatorPluginKt" />
         <item itemvalue="Kotlin.N_SegmentedAreaComparatorPluginKt" />
-        <item itemvalue="Kotlin.N_DifferenceMapPluginKt" />
-        <item itemvalue="Kotlin.N_ProbabilityMapCreatorPluginKt" />
+        <item itemvalue="Kotlin.N_SlidePostprocessingPluginKt" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +250,18 @@
       <workItem from="1596528767303" duration="563000" />
       <workItem from="1596529381019" duration="15304000" />
       <workItem from="1598974930162" duration="4500000" />
-      <workItem from="1598980368296" duration="2223000" />
+      <workItem from="1598980368296" duration="2248000" />
+      <workItem from="1599231852232" duration="173000" />
+      <workItem from="1599232653935" duration="8000" />
+      <workItem from="1599474413171" duration="29000" />
+      <workItem from="1599748920884" duration="755000" />
+      <workItem from="1599808220413" duration="11000" />
+      <workItem from="1600094080152" duration="723000" />
+      <workItem from="1600096261059" duration="1916000" />
+      <workItem from="1600870335100" duration="397000" />
+      <workItem from="1601286543914" duration="11240000" />
+      <workItem from="1601494924529" duration="23000" />
+      <workItem from="1601549160931" duration="16026000" />
     </task>
     <task id="LOCAL-00001" summary="line detection">
       <created>1586012850897</created>
@@ -306,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598900332711</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="difference maps of heatmap">
+      <created>1598987562356</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1598987562356</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,67 +393,93 @@
     <MESSAGE value="Plugins can now apply to subfolders" />
     <MESSAGE value="Bugfixes" />
     <MESSAGE value="difference maps" />
-    <option name="LAST_COMMIT_MESSAGE" value="difference maps" />
+    <MESSAGE value="difference maps of heatmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="difference maps of heatmap" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1942" y="493" width="452" height="468" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1592044135234">
+    <state x="1650" y="570" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601322214408">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state x="1942" y="493" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1592044135234" />
-    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1598900332208">
+    <state x="1650" y="570" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601322214408" />
+    <state x="1699" y="558" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1601753262044">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state x="1528" y="466" key="CommitChangelistDialog2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598900332208" />
-    <state x="5135" y="535" key="FileChooserDialogImpl" timestamp="1596529587972">
-      <screen x="3840" y="0" width="2560" height="1400" />
+    <state x="1699" y="558" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601753262044" />
+    <state x="1528" y="466" key="CommitChangelistDialog2" timestamp="1598987561907">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state x="1528" y="466" key="CommitChangelistDialog2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987561907" />
+    <state width="473" height="466" key="DebuggerActiveHint" timestamp="1601551738281">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="473" height="466" key="DebuggerActiveHint/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601551738281" />
+    <state x="1943" y="596" key="FileChooserDialogImpl" timestamp="1601643694696">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="-1265" y="535" key="FileChooserDialogImpl/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601589958525" />
+    <state x="1943" y="596" key="FileChooserDialogImpl/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601643694696" />
     <state x="5135" y="535" key="FileChooserDialogImpl/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596529587972" />
-    <state x="1943" y="596" key="FileChooserDialogImpl/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1592041145428" />
-    <state width="3797" height="578" key="GridCell.Tab.0.bottom" timestamp="1598981995527">
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom" timestamp="1601754438016">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="2517" height="578" key="GridCell.Tab.0.bottom/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015935" />
+    <state width="1874" height="281" key="GridCell.Tab.0.bottom/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601754438016" />
     <state width="2517" height="238" key="GridCell.Tab.0.bottom/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596546050437" />
     <state width="2517" height="238" key="GridCell.Tab.0.bottom/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596543008870" />
-    <state width="3797" height="578" key="GridCell.Tab.0.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598981995527" />
-    <state width="3797" height="578" key="GridCell.Tab.0.center" timestamp="1598981995527">
+    <state width="3797" height="578" key="GridCell.Tab.0.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987573416" />
+    <state width="1874" height="281" key="GridCell.Tab.0.center" timestamp="1601754438016">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="2517" height="578" key="GridCell.Tab.0.center/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015935" />
+    <state width="1874" height="281" key="GridCell.Tab.0.center/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601754438016" />
     <state width="2517" height="238" key="GridCell.Tab.0.center/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596546050437" />
     <state width="2517" height="238" key="GridCell.Tab.0.center/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596543008870" />
-    <state width="3797" height="578" key="GridCell.Tab.0.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598981995527" />
-    <state width="3797" height="578" key="GridCell.Tab.0.left" timestamp="1598981995527">
+    <state width="3797" height="578" key="GridCell.Tab.0.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987573416" />
+    <state width="1874" height="281" key="GridCell.Tab.0.left" timestamp="1601754438016">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="2517" height="578" key="GridCell.Tab.0.left/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015935" />
+    <state width="1874" height="281" key="GridCell.Tab.0.left/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601754438016" />
     <state width="2517" height="238" key="GridCell.Tab.0.left/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596546050437" />
     <state width="2517" height="238" key="GridCell.Tab.0.left/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596543008870" />
-    <state width="3797" height="578" key="GridCell.Tab.0.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598981995527" />
-    <state width="3797" height="578" key="GridCell.Tab.0.right" timestamp="1598981995527">
+    <state width="3797" height="578" key="GridCell.Tab.0.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987573416" />
+    <state width="1874" height="281" key="GridCell.Tab.0.right" timestamp="1601754438016">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="2517" height="578" key="GridCell.Tab.0.right/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015935" />
+    <state width="1874" height="281" key="GridCell.Tab.0.right/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601754438016" />
     <state width="2517" height="238" key="GridCell.Tab.0.right/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596546050437" />
     <state width="2517" height="238" key="GridCell.Tab.0.right/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596543008870" />
-    <state width="3797" height="578" key="GridCell.Tab.0.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598981995527" />
-    <state width="3797" height="441" key="GridCell.Tab.1.bottom" timestamp="1598980353594">
+    <state width="3797" height="578" key="GridCell.Tab.0.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987573416" />
+    <state width="3797" height="441" key="GridCell.Tab.1.bottom" timestamp="1601552838242">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="3797" height="441" key="GridCell.Tab.1.bottom/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015932" />
+    <state width="3797" height="441" key="GridCell.Tab.1.bottom/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601552838242" />
     <state width="2517" height="343" key="GridCell.Tab.1.bottom/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596544916132" />
     <state width="2517" height="343" key="GridCell.Tab.1.bottom/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596542952002" />
     <state width="3797" height="441" key="GridCell.Tab.1.bottom/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598980353594" />
-    <state width="3797" height="441" key="GridCell.Tab.1.center" timestamp="1598980353594">
+    <state width="3797" height="441" key="GridCell.Tab.1.center" timestamp="1601552838242">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="3797" height="441" key="GridCell.Tab.1.center/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015932" />
+    <state width="3797" height="441" key="GridCell.Tab.1.center/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601552838242" />
     <state width="2517" height="343" key="GridCell.Tab.1.center/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596544916132" />
     <state width="2517" height="343" key="GridCell.Tab.1.center/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596542952002" />
     <state width="3797" height="441" key="GridCell.Tab.1.center/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598980353594" />
-    <state width="3797" height="441" key="GridCell.Tab.1.left" timestamp="1598980353594">
+    <state width="3797" height="441" key="GridCell.Tab.1.left" timestamp="1601552838242">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="3797" height="441" key="GridCell.Tab.1.left/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015932" />
+    <state width="3797" height="441" key="GridCell.Tab.1.left/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601552838242" />
     <state width="2517" height="343" key="GridCell.Tab.1.left/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596544916132" />
     <state width="2517" height="343" key="GridCell.Tab.1.left/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596542952002" />
     <state width="3797" height="441" key="GridCell.Tab.1.left/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598980353594" />
-    <state width="3797" height="441" key="GridCell.Tab.1.right" timestamp="1598980353594">
+    <state width="3797" height="441" key="GridCell.Tab.1.right" timestamp="1601552838242">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
+    <state width="3797" height="441" key="GridCell.Tab.1.right/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601411015932" />
+    <state width="3797" height="441" key="GridCell.Tab.1.right/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601552838242" />
     <state width="2517" height="343" key="GridCell.Tab.1.right/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596544916132" />
     <state width="2517" height="343" key="GridCell.Tab.1.right/3840.0.2560.1400/0.0.2560.1400@3840.0.2560.1400" timestamp="1596542952002" />
     <state width="3797" height="441" key="GridCell.Tab.1.right/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598980353594" />
@@ -406,27 +487,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="911" y="558" key="Performance.Activity.Monitor/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596529294260" />
-    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1598900339812">
+    <state x="1400" y="354" key="SettingsEditor" timestamp="1601322269397">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598900339812" />
+    <state x="1400" y="354" key="SettingsEditor/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601322269397" />
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2" timestamp="1598987563979">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="1492" y="604" key="Vcs.Push.Dialog.v2/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598987563979" />
+    <state x="92" y="92" width="3656" height="1376" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601551877961">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state x="92" y="92" width="3656" height="1376" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601551877961" />
     <state x="1015" y="350" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1596541665525">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1015" y="350" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596541665525" />
-    <state x="1627" y="536" width="586" height="556" key="find.popup" timestamp="1598979209502">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state x="-1105" y="470" width="684" height="661" key="find.popup" timestamp="1601363155725">
+      <screen x="-2560" y="0" width="2560" height="1400" />
     </state>
+    <state x="-1105" y="470" width="684" height="661" key="find.popup/0.0.3840.1560/-2560.0.2560.1400@-2560.0.2560.1400" timestamp="1601363155725" />
+    <state x="2182" y="524" width="1026" height="736" key="find.popup/0.0.3840.1560/-2560.0.2560.1400@0.0.3840.1560" timestamp="1601324722817" />
     <state x="1085" y="481" width="591" height="488" key="find.popup/3840.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1596541566174" />
     <state x="1627" y="536" width="586" height="556" key="find.popup/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1598979209502" />
-    <state x="1576" y="370" key="run.anything.popup" timestamp="1592053328539">
-      <screen x="0" y="0" width="3840" height="1560" />
-    </state>
-    <state x="1576" y="370" key="run.anything.popup/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1592053328539" />
-    <state x="1583" y="355" width="672" height="678" key="search.everywhere.popup" timestamp="1590485063811">
-      <screen x="0" y="0" width="3840" height="1560" />
-    </state>
-    <state x="1583" y="355" width="672" height="678" key="search.everywhere.popup/3840.180.2560.1400/-2560.179.2560.1400/0.0.3840.1560@0.0.3840.1560" timestamp="1590485063811" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

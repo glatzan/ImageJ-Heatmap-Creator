@@ -10,7 +10,7 @@ import java.util.concurrent.Executors
 /**
  * Creates a probability map for an image Folder
  */
-class N_ProbabilityMapCreatorPlugin : PlugIn {
+class N_SlidePostprocessingPlugin : PlugIn {
     override fun run(args: String) {
         val argArr = args.split(" ")
         var folderMode = false
@@ -74,6 +74,6 @@ fun main(vararg args: String) {
     val targetDir = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_0.1_post"
     val targetFolderSuffix = "_pm"
 
-    IJ.runPlugIn(N_ProbabilityMapCreatorPlugin::class.qualifiedName, "folder_mode $sourceDir $targetDir $targetFolderSuffix")
+    IJ.runPlugIn(N_SlidePostprocessingPlugin::class.qualifiedName, "folder_mode $sourceDir $targetDir $targetFolderSuffix")
 }
 

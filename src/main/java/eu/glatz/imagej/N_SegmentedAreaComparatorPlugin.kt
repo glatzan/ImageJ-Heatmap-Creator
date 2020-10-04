@@ -6,6 +6,7 @@ import eu.glatz.imagej.heatmap.segmentaion.SegmentationComparator
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationToCSV
 import ij.IJ
+import ij.Macro
 import ij.io.FileSaver
 import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
@@ -16,46 +17,63 @@ import java.nio.file.Files
  * [folderMode], sourceFolder, targetFolder, [targetImageFolder], [targetCVSFile]
  */
 class N_SegmentedAreaComparatorPlugin : PlugIn {
-    override fun run(args: String) {
-        val argArr = args.split(" ")
-        var folderMode = false
+    override fun run(args: String?) {
 
-        if (argArr.size < 2) {
-            IJ.error("Provide source and target Folder")
-            return
+        var groundTruthFolder: String? = null
+        var netFolder: String? = null
+        var targetFolder: String? = null
+        var targetCsv: String? = null
+        var folderMode = true
+
+        fun processCMD(str: String) {
+            IJ.log(str)
+            when {
+                str.startsWith("-g=") -> groundTruthFolder = str.substringAfter("-g=").replace("\"", "")
+                str.startsWith("-n=") -> netFolder = str.substringAfter("-n=").replace("\"", "")
+                str.startsWith("-t=") -> targetFolder = str.substringAfter("-t=").replace("\"", "")
+                str.startsWith("-c=") -> targetCsv = str.substringAfter("-c=").replace("\"", "")
+                str.startsWith("-f=") -> folderMode = str.substringAfter("-f").toLowerCase() == "true"
+            }
         }
 
-        if (argArr[0] == "folder_mode")
-            folderMode = true
-
-        if (folderMode && argArr.size < 3) {
-            IJ.error("Provide source and target Folder")
-            return
+        if (args.isNullOrBlank() || args.split(" ").isEmpty()) {
+            IJ.log("No args $args ${Macro.getOptions()}")
+            if (Macro.getOptions() != null && Macro.getOptions().split(" ").isNotEmpty()) {
+                Macro.getOptions().split(" ").forEach {
+                    processCMD(it)
+                }
+            } else {
+                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ");
+                netFolder = IJ.getDirectory("Choose net Dir ");
+                targetFolder = IJ.getDirectory("Choose target Dir ");
+                targetCsv = IJ.getFilePath("Choose target csv ");
+            }
+        } else {
+            IJ.log("Args: ${args}")
+            args.split(" ").forEach {
+                processCMD(it)
+            }
         }
 
-        val groundTruthFolder = if (folderMode) File(argArr[1]) else File(argArr[0])
-        val netFolder = if (folderMode) File(argArr[2]) else File(argArr[1])
-        val targetImageFolder = if (argArr.size >= 4 && File(argArr[3]).isDirectory) File(argArr[3]) else null
-        val targetCSVFile = if (argArr.size == 5) File(argArr[4]) else null
-
-        if (!groundTruthFolder.isDirectory || !netFolder.isDirectory) {
-            IJ.error("Source or target is not a folder")
+        if (groundTruthFolder == null || targetFolder == null || netFolder == null ||
+                !File(groundTruthFolder).isDirectory || !File(targetFolder).isDirectory || !File(netFolder).isDirectory) {
+            IJ.error("Source or target is not a folder ($groundTruthFolder / $netFolder / $targetFolder )")
             return
         }
 
         if (folderMode) {
-            val groundTruthFiles = groundTruthFolder.listFiles().filter { Files.isDirectory(it.toPath()) }
-            val netImageFiles = netFolder.listFiles().filter { Files.isDirectory(it.toPath()) }
+            val groundTruthFiles = File(groundTruthFolder).listFiles().filter { Files.isDirectory(it.toPath()) }
+            val netImageFiles = File(netFolder).listFiles().filter { Files.isDirectory(it.toPath()) }
 
             for (gFile in groundTruthFiles) {
                 val matchingNetImages = netImageFiles.filter { it.name.startsWith(gFile.name) }
                 println("Found ${matchingNetImages.size} Images for ground truth : ${gFile.name}")
                 for (nFiles in matchingNetImages) {
-                    runFolder(gFile, nFiles, targetImageFolder, targetCSVFile)
+                    runFolder(gFile, nFiles, File(targetFolder), File(targetCsv))
                 }
             }
         } else {
-            runFolder(groundTruthFolder, netFolder, targetImageFolder, targetCSVFile)
+            runFolder(File(groundTruthFolder), File(netFolder), File(targetFolder), File(targetCsv))
         }
 
         println("end")
@@ -99,21 +117,12 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
  * Compares ground truth with a folder net image folder. Matches areas.
  */
 fun main(vararg args: String) {
-//    // one to one compare
-//    val groundTruth = "D:\\Projekte\\export\\vali\\18894_mask"
-//    val netImages = "D:\\Projekte\\export\\vali\\18894_big_150_post"
-//
-//    IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "$groundTruth $netImages ")
-//
-//    Thread.sleep(10000)
-
-
     // folder compare
-    val groundTruth = "D:\\Projekte\\vaa_vali_compare\\5_x4_vali_mask_optimzed_1000_folder"
-    val netImages = "D:\\Projekte\\vaa_vali_compare\\9_net_winners"
-    val saveImageTO = "D:\\Projekte\\vaa_export_test_learn_set\\out_250_compare_result"
-    val saveCSVTO = "D:\\Projekte\\vaa_vali_compare\\compare_250_05.csv"
+    val groundTruth = "D:\\Projekte\\1_vaa_export_test_learn_set\\ground_truth_ray"
+    val netImages = "D:\\Projekte\\1_vaa_export_test_learn_set\\out_merge"
+    val saveImageTO = "D:\\Projekte\\delete"
+    val saveCSVTO = "D:\\Projekte\\1_vaa_vali_compare\\net_compare_final.csv"
 
-    IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "folder_mode $groundTruth $netImages $saveImageTO $saveCSVTO")
+    IJ.runPlugIn(N_SegmentedAreaComparatorPlugin::class.qualifiedName, "-g=$groundTruth -n=$netImages -t=$saveImageTO -c=$saveCSVTO")
 }
 
