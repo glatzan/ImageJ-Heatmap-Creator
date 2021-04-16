@@ -19,7 +19,7 @@ class StackLoaderPlugin : PlugIn {
                     if (it.startsWith("-f="))
                         path = it.substringAfter("-f=").replace("\"", "").replace("[", "").replace("]", "")
                 }
-            }else{
+            } else {
                 IJ.log("!! ${Macro.getOptions()}")
             }
         } else {

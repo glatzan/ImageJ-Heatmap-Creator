@@ -32,8 +32,8 @@ class GraftEndothelialLine : PlugInFilter {
     }
 
     override fun run(ip: ImageProcessor) {
-        IJ.run(imp, "8-bit", "");
-        IJ.run(imp, "Skeletonize (2D/3D)", "");
+        IJ.run(imp, "8-bit", "")
+        IJ.run(imp, "Skeletonize (2D/3D)", "")
 
         val lineImage = IJ.createImage("Graft_AcceptedLines", "RGB", ip.width, ip.height, 1)
         val graftLines = IJ.createImage("Graft_Lines", "RGB", ip.width, ip.height, 1)

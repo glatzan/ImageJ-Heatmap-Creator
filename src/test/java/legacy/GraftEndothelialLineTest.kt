@@ -1,13 +1,5 @@
 package legacy
 
-import eu.glatz.imagej.legacy.GraftEndothelialLine
-import eu.glatz.imagej.legacy.HostParabola
-import ij.IJ
-import ij.ImageJ
-import ij.io.Opener
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Test
-
 class GraftEndothelialLineTest {
 
 //    @Test

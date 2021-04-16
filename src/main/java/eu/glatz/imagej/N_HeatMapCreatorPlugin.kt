@@ -45,8 +45,8 @@ class N_HeatMapCreatorPlugin : PlugIn {
                     processCMD(it)
                 }
             } else {
-                sourceFolder = IJ.getDirectory("Choose source Dir ");
-                targetFolder = IJ.getDirectory("Choose target Dir ");
+                sourceFolder = IJ.getDirectory("Choose source Dir ")
+                targetFolder = IJ.getDirectory("Choose target Dir ")
             }
         } else {
             IJ.log("Args: ${args}")

@@ -74,7 +74,7 @@ object ImageSegmentation {
             }
         }
 
-        val dimension = Rectangle(minX, minY, maxX - minX+1, maxY - minY+1)
+        val dimension = Rectangle(minX, minY, maxX - minX + 1, maxY - minY + 1)
 
         val segment = SegmentedImage(segmentCount)
         segment.dimension = dimension

@@ -1,6 +1,5 @@
 package eu.glatz.imagej.model
 
-import java.awt.geom.Point2D
 import kotlin.math.sqrt
 
 class Point {

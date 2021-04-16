@@ -1,12 +1,5 @@
 package legacy
 
-import eu.glatz.imagej.legacy.HostParabola
-import ij.IJ
-import ij.ImageJ
-import ij.io.Opener
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-
 
 class HostParabolaTest {
 //    @Test

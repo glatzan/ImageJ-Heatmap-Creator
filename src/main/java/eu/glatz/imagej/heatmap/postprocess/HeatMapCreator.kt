@@ -49,7 +49,7 @@ object HeatMapCreator {
             for (x in 0 until maxWidth) {
                 for (y in 0 until maxHeight) {
                     if (currentImageProcessor.get(x, y) > 0)
-                        columnValue++;
+                        columnValue++
                 }
 
                 if (columnValue != 0) {
@@ -92,13 +92,13 @@ object HeatMapCreator {
                 throw IllegalStateException("Images must match dimension! width: $maxWidth,  height: $maxHeight (current is: ${currentImageProcessor.width} / ${currentImageProcessor.height})")
 
             var columnValue = 0
-            for ((i,rayPointArr) in rayPoint.withIndex()) {
+            for ((i, rayPointArr) in rayPoint.withIndex()) {
                 for (point in rayPointArr) {
                     if (point.x !in 0..currentImageProcessor.width - 1 || point.y !in 0..currentImageProcessor.height - 1)
                         continue
 
                     if (currentImageProcessor.get(point.x, point.y) > 0)
-                        columnValue++;
+                        columnValue++
                 }
 
                 if (columnValue != 0) {

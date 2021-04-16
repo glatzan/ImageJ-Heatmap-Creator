@@ -1,12 +1,5 @@
 package legacy
 
-import eu.glatz.imagej.legacy.ProcessGraft
-import ij.IJ
-import ij.ImageJ
-import ij.io.Opener
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Test
-
 class ProcessGraftTest {
 //    @Test
 //    fun test() {

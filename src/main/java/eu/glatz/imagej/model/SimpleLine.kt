@@ -9,6 +9,7 @@ open class SimpleLine : Line {
     constructor(id: Int) {
         this.id = id
     }
+
     constructor(id: Int, points: List<Point>) {
         this.id = id
         this.addPoint(*points.toTypedArray())

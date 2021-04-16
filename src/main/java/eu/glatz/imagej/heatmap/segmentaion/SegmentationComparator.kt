@@ -10,9 +10,9 @@ object SegmentationComparator {
         for (netSeg in netSegment) {
             val res = compareSegmentation(netSeg, maskSegments)
 
-            if(res.isEmpty()){
+            if (res.isEmpty()) {
                 nonOverlappingNets.add(netSeg)
-            }else{
+            } else {
                 overlappingSegments.addAll(res)
                 overlappingMasks.addAll(res.map { it.maskSegment })
             }

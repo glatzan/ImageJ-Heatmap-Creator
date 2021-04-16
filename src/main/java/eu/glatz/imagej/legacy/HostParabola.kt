@@ -63,7 +63,7 @@ class HostParabola : PlugInFilter {
             var first = false
             for (y in startYScanAt + kernelIter until yScanHeight + startYScanAt - kernelIter) {
 
-                var line = 0;
+                var line = 0
                 for (x_kernel in -kernelIter..kernelIter) {
                     for (y_kernel in -kernelIter..kernelIter) {
                         line += acceptedLinesProcessor.get(x + x_kernel, y + y_kernel)
@@ -111,7 +111,7 @@ class HostParabola : PlugInFilter {
             for (point in points) {
                 if (point.y < minPoint.y) {
                     minPoint = point
-                    sameY = 0;
+                    sameY = 0
                 } else if (point.y == minPoint.y) {
                     if (sameY < 0)
                         sameY = 0

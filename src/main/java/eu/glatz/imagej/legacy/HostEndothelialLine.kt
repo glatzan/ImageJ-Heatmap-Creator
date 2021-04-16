@@ -1,7 +1,10 @@
 package eu.glatz.imagej.legacy
 
 import eu.glatz.imagej.heatmap.ray.Parabola
-import eu.glatz.imagej.model.*
+import eu.glatz.imagej.model.JoinedLine
+import eu.glatz.imagej.model.Line
+import eu.glatz.imagej.model.LineClassification
+import eu.glatz.imagej.model.Point
 import eu.glatz.imagej.util.DrawUtil
 import eu.glatz.imagej.util.LineFinder
 import eu.glatz.imagej.util.VectorUtils
@@ -34,8 +37,8 @@ class HostEndothelialLine : PlugInFilter {
     }
 
     override fun run(ip: ImageProcessor) {
-        IJ.run(imp, "8-bit", "");
-        IJ.run(imp, "Skeletonize (2D/3D)", "");
+        IJ.run(imp, "8-bit", "")
+        IJ.run(imp, "Skeletonize (2D/3D)", "")
 
         val lineImage = IJ.createImage("Host_AcceptedLines", "RGB", ip.width, ip.height, 1)
         val finalImage = IJ.createImage("Host_FinalLine", "RGB", ip.width, ip.height, 1)
@@ -66,7 +69,7 @@ class HostEndothelialLine : PlugInFilter {
         while (iterLines.isNotEmpty()) {
             val lineRanking = calculateLineRankings(currentLine, iterLines)
 
-            var maxProbability = Int.MIN_VALUE;
+            var maxProbability = Int.MIN_VALUE
             var nextLine: LineClassification? = null
 
             // rank all remaining lines
@@ -139,7 +142,7 @@ class HostEndothelialLine : PlugInFilter {
         var second: LineClassification
 
         var distanceToSecondLine: Int = 0
-        var distancePositionInList = 0;
+        var distancePositionInList = 0
         var ranking: Int = 0
 
         constructor(first: LineClassification, second: LineClassification) {

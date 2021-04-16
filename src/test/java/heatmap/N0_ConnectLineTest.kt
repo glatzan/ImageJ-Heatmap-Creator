@@ -1,12 +1,5 @@
 package heatmap
 
-import eu.glatz.imagej.heatmap.mask.ConnectedLineCalculator
-import ij.IJ
-import ij.ImageJ
-import org.junit.jupiter.api.Test
-import java.awt.Color
-import java.awt.Point
-
 /**
  * Draws connected Lines.
  */

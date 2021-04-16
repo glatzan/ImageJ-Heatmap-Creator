@@ -1,7 +1,5 @@
 package eu.glatz.imagej.heatmap.segmentaion.output
 
-import eu.glatz.imagej.heatmap.segmentaion.HeatMapSurfaceComparator
-
 class ImageKeyFigureData {
     var name = ""
     var overlappingNetNonUniqueTotalPixelCount = 0
@@ -15,7 +13,6 @@ class ImageKeyFigureData {
     var overlappingSegmentsCount = 0
     var nonOverlappingNetCount = 0
     var nonOverlappingMaskCount = 0
-
 
 
     operator fun plus(imageKeyFigureData: ImageKeyFigureData) {

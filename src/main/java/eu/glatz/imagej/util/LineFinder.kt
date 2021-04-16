@@ -1,7 +1,7 @@
 package eu.glatz.imagej.util
 
-import eu.glatz.imagej.model.SimpleLine
 import eu.glatz.imagej.model.Point
+import eu.glatz.imagej.model.SimpleLine
 import ij.process.ImageProcessor
 import java.util.*
 import kotlin.math.floor
@@ -9,11 +9,11 @@ import kotlin.math.floor
 object LineFinder {
 
     fun findConnectedRegion(ip: ImageProcessor, kernelSize: Int = 5): List<SimpleLine> {
-        val lines = mutableListOf<SimpleLine>();
+        val lines = mutableListOf<SimpleLine>()
         val activeFront = Stack<Point>()
         val visitedPoints = Array(ip.width) { BooleanArray(ip.height) }
 
-        var idCounter = 0;
+        var idCounter = 0
         for (x in 0 until ip.width) {
             for (y in 0 until ip.height) {
                 val pix = ip.get(x, y)
@@ -87,7 +87,7 @@ object LineFinder {
                     break
                 }
 
-                lostPoints++;
+                lostPoints++
             }
 
 //            img.updateAndDraw()
@@ -109,7 +109,7 @@ object LineFinder {
     private fun connectedRegion(line: SimpleLine, activeFront: Stack<Point>, visitedPoints: Array<BooleanArray>, ip: ImageProcessor, kernelSize: Int): SimpleLine {
         val kernelCalc = floor(kernelSize.toDouble() / 2).toInt()
         while (!activeFront.empty()) {
-            val point = activeFront.pop();
+            val point = activeFront.pop()
             if (point.value == 255) {
                 line.addPoint(point)
                 // 8x8 neighborhood

@@ -2,7 +2,6 @@ package eu.glatz.imagej.heatmap.segmentaion
 
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageKeyFigureData
 import ij.IJ
-import ij.ImagePlus
 import ij.ImageStack
 import ij.io.FileSaver
 import ij.process.ImageProcessor

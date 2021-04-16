@@ -24,11 +24,11 @@ class LineDetector {
     }
 
     fun findLines(ip: ImageProcessor, kernelSize: Int = 5): List<MaskLine> {
-        val lines = mutableListOf<MaskLine>();
+        val lines = mutableListOf<MaskLine>()
         val activeFront = Stack<Pair<Point, UInt>>()
         val visitedPoints = Array(ip.width) { BooleanArray(ip.height) }
 
-        var idCounter = 0;
+        var idCounter = 0
         for (x in 0 until ip.width) {
             for (y in 0 until ip.height) {
                 val pix = ip.get(x, y).toUInt()
@@ -47,7 +47,7 @@ class LineDetector {
     private fun connectLine(line: MaskLine, activeFront: Stack<Pair<Point, UInt>>, visitedPoints: Array<BooleanArray>, ip: ImageProcessor, kernelSize: Int, value: UInt): MaskLine {
         val kernelCalc = floor(kernelSize.toDouble() / 2).toInt()
         while (!activeFront.empty()) {
-            val point = activeFront.pop();
+            val point = activeFront.pop()
 
             if (point.second.and(value) != value)
                 continue
@@ -110,7 +110,7 @@ class LineDetector {
                     break
                 }
 
-                lostPoints++;
+                lostPoints++
             }
         }
         resultImage.show()

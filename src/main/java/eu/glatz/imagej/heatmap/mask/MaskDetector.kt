@@ -4,8 +4,6 @@ import eu.glatz.imagej.heatmap.ray.RayList
 import ij.IJ
 import ij.ImagePlus
 import ij.process.ImageProcessor
-import java.awt.Color
-import java.awt.Point
 
 
 class MaskDetector {

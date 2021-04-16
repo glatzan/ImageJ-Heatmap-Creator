@@ -3,7 +3,7 @@ package eu.glatz.imagej.model
 class JoinedLine(id: Int) : Line {
     override var id: Int = 0
     override var length: Double = 0.0
-    val lines: MutableList<Line> = mutableListOf();
+    val lines: MutableList<Line> = mutableListOf()
 
     fun addLine(line: Line) {
         lines.add(line)
@@ -13,7 +13,7 @@ class JoinedLine(id: Int) : Line {
         lines.forEach { addLine(it) }
     }
 
-    override fun addPoint(vararg point: Point) : Line {
+    override fun addPoint(vararg point: Point): Line {
         lines.last().addPoint(*point)
         return this
     }

@@ -1,19 +1,13 @@
 package eu.glatz.imagej
 
 import eu.glatz.imagej.heatmap.segmentaion.HeatMapSurfaceComparator
-import eu.glatz.imagej.heatmap.segmentaion.ImageSegmentation
-import eu.glatz.imagej.heatmap.segmentaion.OverlappingSegmentResult
-import eu.glatz.imagej.heatmap.segmentaion.SegmentationComparator
-import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationToCSV
 import ij.IJ
 import ij.ImagePlus
 import ij.Macro
-import ij.io.FileSaver
 import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
 import java.io.File
-import java.nio.file.Files
 
 class N_HeatMapSurfaceComparatorPlugin : PlugIn {
     override fun run(args: String?) {
@@ -42,10 +36,10 @@ class N_HeatMapSurfaceComparatorPlugin : PlugIn {
                     processCMD(it)
                 }
             } else {
-                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ");
-                netFolder = IJ.getDirectory("Choose net Dir ");
-                targetFolder = IJ.getDirectory("Choose target Dir ");
-                targetCsv = IJ.getFilePath("Choose target csv ");
+                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ")
+                netFolder = IJ.getDirectory("Choose net Dir ")
+                targetFolder = IJ.getDirectory("Choose target Dir ")
+                targetCsv = IJ.getFilePath("Choose target csv ")
             }
         } else {
             IJ.log("Args: ${args}")
@@ -96,6 +90,6 @@ fun main(vararg args: String) {
     val saveCSVTO = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_maps_net_raw_250_0015_post_300\\difference_map_compare.csv"
     val inverted = true
 
-    IJ.runPlugIn(N_HeatMapSurfaceComparatorPlugin::class.qualifiedName, "-g=$groundTruth -n=$netImages -t=$targetDir -c=$saveCSVTO -i=${inverted.toString()}")
+    IJ.runPlugIn(N_HeatMapSurfaceComparatorPlugin::class.qualifiedName, "-g=$groundTruth -n=$netImages -t=$targetDir -c=$saveCSVTO -i=$inverted")
 }
 

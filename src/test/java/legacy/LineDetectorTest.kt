@@ -1,12 +1,5 @@
 package legacy
 
-import eu.glatz.imagej.legacy.LineDetector
-import ij.IJ
-import ij.ImageJ
-import ij.io.Opener
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-
 class LineDetectorTest {
 //    @Test
 //    fun test(){

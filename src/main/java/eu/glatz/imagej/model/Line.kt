@@ -9,7 +9,7 @@ interface Line {
     fun lastPoint(): Point
     fun getAllPoints(): List<Point>
 
-    fun calculateIntersection(line: Line){
+    fun calculateIntersection(line: Line) {
 //        val equation = "(((${x})+(${direction.x})*t)*(${direction.x}))+(((${y})+(${direction.y})*t)*(${direction.y}))"
     }
 }

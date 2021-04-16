@@ -59,7 +59,7 @@ class ProcessGraft : PlugIn {
 //        }
 
         result.show()
-        IJ.run(resultOrig,"Add Image...", "image=Graft__AcceptedLines x=0 y=0 opacity=100 zero");
+        IJ.run(resultOrig, "Add Image...", "image=Graft__AcceptedLines x=0 y=0 opacity=100 zero")
         orig2.show()
         resultOrig.show()
         host_image_orig.show()

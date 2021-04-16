@@ -32,9 +32,9 @@ class N_DifferenceMapPlugin : PlugIn {
                     processCMD(it)
                 }
             } else {
-                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ");
-                netFolder = IJ.getDirectory("Choose net Dir ");
-                targetFolder = IJ.getDirectory("Choose target Dir ");
+                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ")
+                netFolder = IJ.getDirectory("Choose net Dir ")
+                targetFolder = IJ.getDirectory("Choose target Dir ")
             }
         } else {
             IJ.log("Args: ${args}")

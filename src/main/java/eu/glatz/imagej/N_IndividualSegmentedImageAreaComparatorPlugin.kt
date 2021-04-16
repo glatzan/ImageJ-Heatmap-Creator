@@ -6,7 +6,6 @@ import eu.glatz.imagej.heatmap.segmentaion.SegmentationComparator
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationDrawer
 import eu.glatz.imagej.heatmap.segmentaion.output.ImageSegmentationToCSV
 import ij.IJ
-import ij.io.FileSaver
 import ij.plugin.FolderOpener
 import ij.plugin.PlugIn
 import java.io.File

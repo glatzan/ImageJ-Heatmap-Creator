@@ -22,13 +22,13 @@ class LineDetector : PlugInFilter {
     }
 
     override fun run(ip: ImageProcessor) {
-        IJ.run(imp, "8-bit", "");
+        IJ.run(imp, "8-bit", "")
         val processor = imp!!.processor
-        IJ.run("Skeletonize (2D/3D)");
+        IJ.run("Skeletonize (2D/3D)")
 
         val out = processor.duplicate().convertToRGB()
 
-        val lines = LineFinder.findConnectedRegion(processor,5)
+        val lines = LineFinder.findConnectedRegion(processor, 5)
         val result = mutableListOf<SimpleLine>()
         lines.forEach { line ->
             if (line.length < minLengthThreshold)
@@ -42,7 +42,7 @@ class LineDetector : PlugInFilter {
 
         imp!!.updateAndDraw()
         ImagePlus("Detected", out).show()
-        IJ.log("icon double-clicked");
+        IJ.log("icon double-clicked")
         IJ.saveString(Gson().toJson(result), "src/main/resources/test.json")
     }
 }

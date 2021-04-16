@@ -1,10 +1,5 @@
 package heatmap
 
-import eu.glatz.imagej.N_IndividualSegmentedImageAreaComparatorPlugin
-import eu.glatz.imagej.N_SegmentedAreaComparatorPlugin
-import ij.IJ
-import org.junit.jupiter.api.Test
-
 class N4_IndividualSegmentedImageAreaComparatorTest {
 
 //    /**

@@ -47,10 +47,10 @@ class N_SegmentedAreaComparatorPlugin : PlugIn {
                     processCMD(it)
                 }
             } else {
-                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ");
-                netFolder = IJ.getDirectory("Choose net Dir ");
-                targetFolder = IJ.getDirectory("Choose target Dir ");
-                targetCsv = IJ.getFilePath("Choose target csv ");
+                groundTruthFolder = IJ.getDirectory("Choose ground Truth Dir ")
+                netFolder = IJ.getDirectory("Choose net Dir ")
+                targetFolder = IJ.getDirectory("Choose target Dir ")
+                targetCsv = IJ.getFilePath("Choose target csv ")
             }
         } else {
             IJ.log("Args: ${args}")

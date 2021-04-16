@@ -1,7 +1,6 @@
 package heatmap
 
 import eu.glatz.imagej.N_MaskCreatorPlugin
-import eu.glatz.imagej.N_RayDrawerPlugin
 import ij.IJ
 import org.junit.jupiter.api.Test
 
@@ -36,9 +35,9 @@ class N2_MaskCreatorTest {
      * Best results
      */
     @Test
-    fun createMasksParabola(){
+    fun createMasksParabola() {
         val sourceDir = "D:\\Projekte\\_VAA\\set_validation\\1_mask_images\\0_red_green"
-        val targetDir =  "D:\\Projekte\\_VAA\\tmp"
+        val targetDir = "D:\\Projekte\\_VAA\\tmp"
 
         IJ.runPlugIn(N_MaskCreatorPlugin::class.qualifiedName, "$sourceDir $targetDir parabola")
     }

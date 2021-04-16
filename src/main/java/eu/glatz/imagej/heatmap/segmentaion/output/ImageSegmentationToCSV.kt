@@ -1,6 +1,5 @@
 package eu.glatz.imagej.heatmap.segmentaion.output
 
-import eu.glatz.imagej.heatmap.segmentaion.OverlappingSegmentResult
 import ij.measure.ResultsTable
 import java.io.File
 
@@ -19,7 +18,6 @@ object ImageSegmentationToCSV {
     }
 
 
-
     fun writeKeyFigureDataToCsv(file: File, data: List<ImageKeyFigureData>, override: Boolean = false) {
         val results = if (!override && file.exists()) {
             ResultsTable.open(file.absolutePath)
@@ -34,7 +32,7 @@ object ImageSegmentationToCSV {
         results.save(file.path)
     }
 
-    fun addRow(data: ImageKeyFigureData, results: ResultsTable){
+    fun addRow(data: ImageKeyFigureData, results: ResultsTable) {
         results.incrementCounter()
         results.addValue("Name", data.name)
 

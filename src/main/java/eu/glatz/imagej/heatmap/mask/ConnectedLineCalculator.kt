@@ -8,7 +8,7 @@ import kotlin.math.floor
 /**
  * Calculates all points from p1 to p2 for a continues line
  */
-class ConnectedLineCalculator() {
+class ConnectedLineCalculator {
 
     fun getIntersectionPixels(p1: Point, p2: Point): Array<Point> {
         return if (abs(p2.x - p1.x) > abs(p2.y - p1.y)) {

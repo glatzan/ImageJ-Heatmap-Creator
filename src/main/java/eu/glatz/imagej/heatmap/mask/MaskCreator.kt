@@ -79,7 +79,7 @@ class MaskCreator {
 
                 if (value.and(0xFF0000u) == 0xFF0000u) {
                     if (host != null) {
-                        continue;
+                        continue
                     }
                     host = point
                 } else if (value.and(0xFF00u) == 0xFF00u) {
@@ -117,7 +117,7 @@ class MaskCreator {
             for (line in lines) {
                 if (line.type == MatchType.Graft) {
                     for (p in line.points) {
-                        val sp = lineDetector.shortestPointOnMask(host, p);
+                        val sp = lineDetector.shortestPointOnMask(host, p)
                         if (sp != null) {
                             resultImageProcessor.drawLine(p.x, p.y, sp.x, sp.y)
                         }

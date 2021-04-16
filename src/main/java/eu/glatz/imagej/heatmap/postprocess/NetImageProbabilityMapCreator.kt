@@ -76,7 +76,7 @@ object NetImageProbabilityMapCreator {
         return probabilityStack
     }
 
-    fun toBinaryImageStack(probabilityMap: ProbabilityMap,threshold: Float = 1.0F): ImageStack {
+    fun toBinaryImageStack(probabilityMap: ProbabilityMap, threshold: Float = 1.0F): ImageStack {
         val probabilityStack = ImageStack(probabilityMap.width, probabilityMap.height)
 
         for (i in 0 until probabilityMap.count) {

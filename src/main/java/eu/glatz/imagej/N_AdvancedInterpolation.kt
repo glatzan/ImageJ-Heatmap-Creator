@@ -8,7 +8,6 @@ import ij.plugin.PlugIn
 import ij.process.ImageProcessor
 import java.awt.Color
 import java.util.*
-import kotlin.collections.HashMap
 
 class N_AdvancedInterpolation : PlugIn {
     override fun run(args: String) {
@@ -32,7 +31,7 @@ class N_AdvancedInterpolation : PlugIn {
     fun connectImageSegments(imageContainer: List<ImageAndSegmentContainer>) {
 
         val searchForNImages = 5
-        var id_counter = 0;
+        var id_counter = 0
 
         val activeFront = mutableListOf<AdvanceSegmentImageFinder>()
         val newActiveFront = mutableListOf<AdvanceSegmentImageFinder>()
@@ -114,21 +113,21 @@ class N_AdvancedInterpolation : PlugIn {
             for (x in 0 until sourceProcessor.width) {
                 for (y in 0 until sourceProcessor.height) {
                     if (sourceProcessor.get(x, y) != 0)
-                        colorProcessor.drawDot(256+x, 256+y)
+                        colorProcessor.drawDot(256 + x, 256 + y)
                 }
             }
 
             val imageSegment = imageSegments[i]
 
             for (segment in imageSegment.segments) {
-                if(segment.segmentID.isBlank()){
+                if (segment.segmentID.isBlank()) {
                     colorProcessor.setColor(Color.RED)
                     colorProcessor.fillRect(256 + segment.dimension.x, 256 + segment.dimension.y, segment.dimension.width, segment.dimension.height)
-                }else {
+                } else {
                     colorProcessor.setColor(getColor(segment.segmentID))
                     colorProcessor.drawRect(256 + segment.dimension.x, 256 + segment.dimension.y, segment.dimension.width, segment.dimension.height)
                 }
-                colorProcessor.drawString(segment.segmentID, 256+segment.dimension.x + segment.dimension.width + 5,256+ segment.dimension.y)
+                colorProcessor.drawString(segment.segmentID, 256 + segment.dimension.x + segment.dimension.width + 5, 256 + segment.dimension.y)
             }
         }
 
@@ -140,7 +139,7 @@ class N_AdvancedInterpolation : PlugIn {
     class ImageAndSegmentContainer {
         var imageNumber = 0
         var imageProcessor: ImageProcessor
-        var segments = mutableListOf<AdvancedImageSegment>();
+        var segments = mutableListOf<AdvancedImageSegment>()
 
 
         constructor(imageNumber: Int, imageProcessor: ImageProcessor, list: List<AdvancedImageSegment>) {

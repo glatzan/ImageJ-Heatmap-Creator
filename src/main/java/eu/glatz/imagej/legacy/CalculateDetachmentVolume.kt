@@ -50,7 +50,7 @@ class CalculateDetachmentVolume : PlugInFilter {
             }
 
             if (foundHost != -1 && foundGraft != -1 && foundHost < foundGraft) {
-                result.add(SimpleLine(result.size, listOf(Point(x, foundHost+1), Point(x, foundGraft-1))))
+                result.add(SimpleLine(result.size, listOf(Point(x, foundHost + 1), Point(x, foundGraft - 1))))
             }
         }
 

@@ -46,12 +46,12 @@ class Parabola {
         val util = ExprEvaluator(false, 5)
         val equation = "(1 / (-${factor} * 2 * (x - ${startPoint.x}))) * (${externalPoint.x} - x) + (${factor} * (x - ${startPoint.x})^2 + ${startPoint.y}) == ${externalPoint.y}"
         val solveEquation = util.eval("Solve(${equation},x)")
-        val x = solveEquation.first().first().second().re().toString().toDouble();
+        val x = solveEquation.first().first().second().re().toString().toDouble()
         val y = calcY(x.toInt())
         return Point(x.toInt(), y)
     }
 
-    fun calculateShortestWayPointOnParabola(externalPoint: Point){
+    fun calculateShortestWayPointOnParabola(externalPoint: Point) {
         val y = "(${factor} * (x - ${startPoint.x})^2 + ${startPoint.y})"
     }
 }

@@ -43,7 +43,7 @@ class N_MaskCreatorPlugin : PlugIn {
 
         val maskPrefix = if (topDown) "_mask_td" else "_mask_ray"
 
-        for (i in 1 until sourceFiles.stackSize +1) {
+        for (i in 1 until sourceFiles.stackSize + 1) {
             val processor = sourceFiles.imageStack.getProcessor(i)
 
             val resultImage = if (topDown) {
