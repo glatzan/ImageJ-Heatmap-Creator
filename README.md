@@ -7,6 +7,14 @@ ImageJ Vaa Heatmap Creator
 Maven build
  
 ## Usage
+
+Plugins
+* Plugins>VAA, "VAA Heatmap", eu.glatz.imagej.N_HeatMapCreatorPlugin
+* Plugins>VAA, "Difference Map", eu.glatz.imagej.N_DifferenceMapPlugin
+* Plugins>VAA, "Compare Difference Map", eu.glatz.imagej.N_HeatMapSurfaceComparatorPlugin
+* Plugins>VAA, "Segmented area comparator", eu.glatz.imagej.N_SegmentedAreaComparatorPlugin
+* Plugins>VAA, "Load Stack", eu.glatz.imagej.StackLoaderPlugin
+
     
 ## License
  
