@@ -31,15 +31,15 @@ class N2_MaskCreatorTest {
 //
 //        IJ.runPlugIn(N_MaskCreatorPlugin::class.qualifiedName, "$sourceDir $targetDir line")
 //    }
-//
-//    /**
-//     * Best results
-//     */
-//    @Test
-//    fun createMasksParabola(){
-//        val sourceDir = "D:\\Projekte\\vaa_export_test_learn_set\\out"
-//        val targetDir =  "D:\\Projekte\\vaa_export_test_learn_set\\out_post_sensitve"
-//
-//        IJ.runPlugIn(N_MaskCreatorPlugin::class.qualifiedName, "$sourceDir $targetDir parabola")
-//    }
+
+    /**
+     * Best results
+     */
+    @Test
+    fun createMasksParabola(){
+        val sourceDir = "D:\\Projekte\\_VAA\\set_validation\\1_mask_images\\0_red_green"
+        val targetDir =  "D:\\Projekte\\_VAA\\tmp"
+
+        IJ.runPlugIn(N_MaskCreatorPlugin::class.qualifiedName, "$sourceDir $targetDir parabola")
+    }
 }

@@ -1,10 +1,11 @@
 package eu.glatz.imagej.heatmap.postprocess
 
+import eu.glatz.imagej.heatmap.mask.ConnectedLineCalculator
+import eu.glatz.imagej.heatmap.ray.RayCalculator
 import ij.IJ
 import ij.ImagePlus
 import ij.ImageStack
 import ij.measure.ResultsTable
-import ij.process.ColorProcessor
 import java.awt.Color
 import java.awt.Point
 import java.io.File
@@ -16,6 +17,11 @@ object HeatMapCreator {
     fun heatMapFromFolder(folder: File, totalDegreeSpan: Double = 180.0): HeatMap {
         val stack = NetImageProbabilityMapCreator.loadStack(folder).imageStack
         return heatMapFromLoadedStack(stack, totalDegreeSpan)
+    }
+
+    fun heatMapByRayFromFolder(folder: File, totalDegreeSpan: Double = 180.0): HeatMap {
+        val stack = NetImageProbabilityMapCreator.loadStack(folder).imageStack
+        return heatMapFromLoadedStackByRay(stack, totalDegreeSpan)
     }
 
     fun heatMapFromProbabilityMap(probabilityMap: ProbabilityMap, totalDegreeSpan: Double = 180.0, threshold: Float = 1.0F): HeatMap {
@@ -55,6 +61,53 @@ object HeatMapCreator {
             }
         }
 
+        return result
+    }
+
+    fun heatMapFromLoadedStackByRay(imageStack: ImageStack, totalDegreeSpan: Double = 180.0): HeatMap {
+        val imageCount = imageStack.size
+
+        val slideDegree = totalDegreeSpan / imageCount
+        val centerOffset = (imageStack.getProcessor(1).width / 2).toInt()
+        val maxWidth = imageStack.getProcessor(1).width
+        val maxHeight = imageStack.getProcessor(1).height
+
+        val result = HeatMap(maxWidth, maxHeight)
+
+        val connectedLineCalculator = ConnectedLineCalculator()
+        val rays = RayCalculator().calcRaysStartAndEndPoint()
+        val rayPoint = rays.map {
+            val tmp = connectedLineCalculator.getIntersectionPixels(it.first, it.second)
+            if (it.first.x > it.second.x)
+                tmp.reverse()
+            tmp
+        }
+
+
+
+        for (imageNumber in 0 until imageCount) {
+            val currentImageProcessor = imageStack.getProcessor(imageNumber + 1)
+
+            if (currentImageProcessor.width != maxWidth || currentImageProcessor.height != maxHeight)
+                throw IllegalStateException("Images must match dimension! width: $maxWidth,  height: $maxHeight (current is: ${currentImageProcessor.width} / ${currentImageProcessor.height})")
+
+            var columnValue = 0
+            for ((i,rayPointArr) in rayPoint.withIndex()) {
+                for (point in rayPointArr) {
+                    if (point.x !in 0..currentImageProcessor.width - 1 || point.y !in 0..currentImageProcessor.height - 1)
+                        continue
+
+                    if (currentImageProcessor.get(point.x, point.y) > 0)
+                        columnValue++;
+                }
+
+                if (columnValue != 0) {
+                    val cartesianPoint = calculateCartesianFromRadial(i, imageNumber * slideDegree, centerOffset, maxWidth - 1, maxHeight - 1)
+                    result.data[cartesianPoint.x][cartesianPoint.y] = columnValue
+                }
+                columnValue = 0
+            }
+        }
         return result
     }
 

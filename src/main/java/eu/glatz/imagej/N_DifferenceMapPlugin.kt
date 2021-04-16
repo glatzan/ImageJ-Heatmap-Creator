@@ -69,9 +69,9 @@ class N_DifferenceMapPlugin : PlugIn {
 }
 
 fun main(vararg args: String) {
-    val groundTruthDir = "D:\\Projekte\\_VAA\\set_validation\\1_mask_images\\2_mask_folders"
-    val netDir = "D:\\Projekte\\_VAA\\set_validation\\2_net_images\\net_results_250_01"
-    val targetDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_maps_net_250_01"
+    val groundTruthDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_mask_grey_interpolated"
+    val netDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_net_grey_interpolated_250_0015_post_300"
+    val targetDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_maps_net_raw_250_0015_post_300"
 
     IJ.runPlugIn(N_DifferenceMapPlugin::class.qualifiedName, "-g=$groundTruthDir -n=$netDir -t=$targetDir")
 }

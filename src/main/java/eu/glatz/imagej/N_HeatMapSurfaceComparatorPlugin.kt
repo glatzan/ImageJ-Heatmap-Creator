@@ -91,9 +91,9 @@ fun main(vararg args: String) {
 
     // folder compare
     val groundTruth = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_mask_grey_interpolated"
-    val netImages = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_net_grey_interpolated_250_01"
-    val targetDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_map_net_grey_interpolated_250_01"
-    val saveCSVTO = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_map_net_grey_interpolated_250_01\\difference_map_compare.csv"
+    val netImages = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\heatmap_net_grey_interpolated_250_0015_post_300"
+    val targetDir = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_maps_net_raw_250_0015_post_300"
+    val saveCSVTO = "D:\\Projekte\\_VAA\\set_validation\\3_heatmaps\\difference_maps_net_raw_250_0015_post_300\\difference_map_compare.csv"
     val inverted = true
 
     IJ.runPlugIn(N_HeatMapSurfaceComparatorPlugin::class.qualifiedName, "-g=$groundTruth -n=$netImages -t=$targetDir -c=$saveCSVTO -i=${inverted.toString()}")

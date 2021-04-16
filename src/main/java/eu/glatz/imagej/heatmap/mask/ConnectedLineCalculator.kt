@@ -30,7 +30,10 @@ class ConnectedLineCalculator() {
         val ySlopeDir = if (ySlope < 0) -1 else 1
 
         for (x in p1.x + 1..p2.x + 1) {
-            val y = (if (ySlopeDir > 0) ceil(((x - (p1.x + 1)) * ySlope)).toInt() else floor(((x - (p1.x + 1)) * ySlope).toDouble()).toInt()) + p1.y
+            val y = (if (ySlopeDir > 0)
+                ceil(((x - (p1.x + 1)) * ySlope)).toInt()
+            else
+                floor(((x - (p1.x + 1)) * ySlope).toDouble()).toInt()) + p1.y
             val point = Point(x - 1, y)
 
             if (result.size > 0 && result.last().y != y) {
@@ -48,7 +51,11 @@ class ConnectedLineCalculator() {
         val xSlopeDir = if (xSlope < 0) -1 else 1
 
         for (y in p1.y + 1..p2.y + 1) {
-            val x = (if (xSlopeDir > 0) ceil(((y - (p1.y + 1)) * xSlope).toDouble()).toInt() else floor(((y - (p1.y + 1)) * xSlope).toDouble()).toInt()) + p1.x
+            val x = (if (xSlopeDir > 0)
+                ceil(((y - (p1.y + 1)) * xSlope).toDouble()).toInt()
+            else
+                floor(((y - (p1.y + 1)) * xSlope).toDouble()).toInt()) + p1.x
+
             val point = Point(x, y - 1)
 
             if (result.size > 0 && result.last().x != x) {

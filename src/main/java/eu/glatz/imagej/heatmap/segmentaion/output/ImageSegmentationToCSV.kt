@@ -12,6 +12,29 @@ object ImageSegmentationToCSV {
         } else {
             ResultsTable()
         }
+
+        addRow(data, results)
+
+        results.save(file.path)
+    }
+
+
+
+    fun writeKeyFigureDataToCsv(file: File, data: List<ImageKeyFigureData>, override: Boolean = false) {
+        val results = if (!override && file.exists()) {
+            ResultsTable.open(file.absolutePath)
+        } else {
+            ResultsTable()
+        }
+
+        data.forEach {
+            addRow(it, results)
+        }
+
+        results.save(file.path)
+    }
+
+    fun addRow(data: ImageKeyFigureData, results: ResultsTable){
         results.incrementCounter()
         results.addValue("Name", data.name)
 
@@ -50,9 +73,8 @@ object ImageSegmentationToCSV {
         results.addValue("Total overlapping Segments", data.overlappingSegmentsCount.toDouble())
         results.addValue("Total none overlapping Net Segments", data.nonOverlappingNetCount.toDouble())
         results.addValue("Total none overlapping Mask Segments", data.nonOverlappingMaskCount.toDouble())
-
-        results.save(file.path)
     }
+
 
     fun writeSegmentResultsToCSV(file: File, imageKeyFigureData: List<ImageKeyFigureData>, imageName: String, override: Boolean = false) {
         val results = if (!override && file.exists()) {

@@ -14,8 +14,8 @@ class ParabolaLineDetector {
         val resultImageProcessor = resultImage.processor
         resultImageProcessor.setColor(Color.WHITE)
 
-        val resultImage2 = IJ.createImage("test", "RGB", 512, 512, 1)
-        val resultProcessor2 = resultImage2.processor
+//        val resultImage2 = IJ.createImage("test", "RGB", 512, 512, 1)
+//        val resultProcessor2 = resultImage2.processor
 
         val parabolaPoints = getParabolaPoints()
         val calc = ConnectedLineCalculator()
